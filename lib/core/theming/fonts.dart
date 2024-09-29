@@ -4,6 +4,21 @@ import 'package:role_based_auth_system/core/theming/colors.dart';
 import 'package:flutter/material.dart';
 
 class AppFonts {
+  static TextStyle inter14Grey400 = navigatorKey.currentContext != null &&
+          AppConstants.screenWidth(navigatorKey.currentContext!) < 600
+      ? TextStyle(
+          fontFamily: 'Inter',
+          fontSize: 14.0.sp(navigatorKey.currentContext!),
+          fontWeight: FontWeight.w400,
+          color: AppColors.grey400,
+        )
+      : const TextStyle(
+          fontFamily: 'Inter',
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+          color: AppColors.grey400,
+        );
+
   static TextStyle inter14Red400 = navigatorKey.currentContext != null &&
           AppConstants.screenWidth(navigatorKey.currentContext!) < 600
       ? TextStyle(
@@ -49,7 +64,7 @@ class AppFonts {
           fontWeight: FontWeight.w400,
           color: AppColors.black,
         );
-        
+
   static TextStyle inter15buttonGreyBorder400 =
       navigatorKey.currentContext != null &&
               AppConstants.screenWidth(navigatorKey.currentContext!) < 600
@@ -96,6 +111,36 @@ class AppFonts {
           color: AppColors.black,
         );
 
+    static TextStyle inter16LightBlack600 = navigatorKey.currentContext != null &&
+          AppConstants.screenWidth(navigatorKey.currentContext!) < 600
+      ? TextStyle(
+          fontFamily: 'Inter',
+          fontSize: 16.0.sp(navigatorKey.currentContext!),
+          fontWeight: FontWeight.w600,
+          color: AppColors.lightBlack,
+        )
+      : const TextStyle(
+          fontFamily: 'Inter',
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+          color: AppColors.lightBlack,
+        );
+
+  static TextStyle inter16PrimaryBlue400 =
+      navigatorKey.currentContext != null &&
+              AppConstants.screenWidth(navigatorKey.currentContext!) < 600
+          ? TextStyle(
+              fontFamily: 'Inter',
+              fontSize: 16.0.sp(navigatorKey.currentContext!),
+              fontWeight: FontWeight.w400,
+              color: AppColors.primaryBlue,
+            )
+          : const TextStyle(
+              fontFamily: 'Inter',
+              fontSize: 16,
+              fontWeight: FontWeight.w400,
+              color: AppColors.primaryBlue,
+            );
   static TextStyle inter18Black500 = navigatorKey.currentContext != null &&
           AppConstants.screenWidth(navigatorKey.currentContext!) < 600
       ? TextStyle(
