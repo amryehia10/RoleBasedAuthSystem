@@ -31,7 +31,7 @@ class DefaultButton extends StatelessWidget {
   const DefaultButton({
     super.key,
     required this.function,
-    this.color = AppColors.primaryGreen,
+    this.color = AppColors.primaryBlue,
     this.textColor = AppColors.white,
     this.height = 54,
     this.width = double.infinity,

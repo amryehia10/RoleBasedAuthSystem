@@ -46,7 +46,6 @@ class UserRolesDropdown extends StatelessWidget {
               listOfValues: const [
                 "Admin",
                 "User",
-                "Viewer",
               ],
               text: "Select Role",
               isCheckedBox: false,
@@ -58,7 +57,6 @@ class UserRolesDropdown extends StatelessWidget {
               items: [
                 "Admin",
                 "User",
-                "Viewer",
               ]
                   .map((element) => element)
                   .toList()

@@ -20,7 +20,7 @@ class AuthRepository {
       ),
       UserModel(
         id: '3',
-        role: 2, //viewer
+        role: 1,
         name: 'Robert Johnson',
         email: 'robert.johnson@example.com',
         phoneNumber: '+1122334455',
