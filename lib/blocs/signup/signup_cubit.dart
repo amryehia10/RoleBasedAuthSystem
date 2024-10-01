@@ -139,7 +139,7 @@ class SignupCubit extends Cubit<SignupState> {
     );
   }
 
-    void checkConfirmPasswordValidation() {
+  void checkConfirmPasswordValidation() {
     if (confirmPasswordController.text.isNotEmpty &&
         confirmPasswordController.text == newPasswordController.text) {
       confirmPasswordValidation = TextFieldValidation.valid;
@@ -158,5 +158,78 @@ class SignupCubit extends Cubit<SignupState> {
         ),
       );
     }
+  }
+
+  bool isFieldNotEmpty(TextEditingController controller) {
+    if (controller.text.isNotEmpty) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  bool isFieldValid(
+  TextFieldValidation validation,
+  ) {
+    if (validation == TextFieldValidation.valid) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  Future<bool> signUp() async{
+    bool isOtpSent = false;
+    checkAddressValidation();
+    checkEmailValidationState();
+    checkUserNameValidation();
+    if(isFieldNotEmpty(customerNameController) &&
+      isFieldNotEmpty(customerEmailController) &&
+      isFieldNotEmpty(customerAddressController) ) {
+        if(isFieldValid(customerEmailValidation) &&
+        isFieldValid(customerNameValidation) &&
+        isFieldValid(customerAddressValidation)) {
+          emit(const SignupState.signUpLoading());
+          final res = await _authRepository.signup(
+            name: customerNameController.text,
+            email: customerEmailController.text,
+            address: customerAddressController.text
+          );
+
+          res.fold(
+            (errMsg) {
+              emit(SignupState.signUpError(errMsg: errMsg));
+            }, 
+            (successMsg) {
+              isOtpSent = true;
+              emit(SignupState.signUpSuccess(successMsg: successMsg));
+            }
+          );
+        }
+    } else {
+      emit(const SignupState.signUpError(
+          errMsg: "Please complete all required fields"));
+    }
+    return isOtpSent;
+  }
+
+  void verifyOtp() async {
+    emit(const SignupState.verifyOTPLoading());
+    String otp = codeControllers[0].text +
+    codeControllers[1].text +
+    codeControllers[2].text +
+    codeControllers[3].text +
+    codeControllers[4].text +
+    codeControllers[5].text;
+
+    final res = await _authRepository.verifyOtp(email: customerEmailController.text, otp: otp);
+    res.fold(
+      (errMsg) {
+        emit(SignupState.verifyOTPError(errMsg: errMsg));
+      }, 
+      (successMsg) {
+        emit(SignupState.verifyOTPSuccess(successMsg: successMsg));
+      }
+    );
   }
 }

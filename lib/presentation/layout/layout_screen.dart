@@ -6,12 +6,13 @@ import 'package:role_based_auth_system/core/helpers/constants.dart';
 import 'package:role_based_auth_system/core/theming/colors.dart';
 import 'package:role_based_auth_system/core/theming/fonts.dart';
 import 'package:role_based_auth_system/presentation/auth/login/login_screen.dart';
+import 'package:role_based_auth_system/presentation/layout/profile/add_new_user_screen.dart';
 
 import '../../blocs/layout/layout_cubit.dart';
 import '../../blocs/profile/profile_cubit.dart';
 import '../../core/routing/routes.dart';
 import 'home/home_screen.dart';
-import 'profile/profile_screen.dart';
+import 'profile/edit_profile_screen.dart';
 
 class LayoutScreen extends StatelessWidget {
   const LayoutScreen({super.key});
@@ -25,17 +26,30 @@ class LayoutScreen extends StatelessWidget {
       ),
       BlocProvider<ProfileCubit>(
         create: (context) => getIt<ProfileCubit>(),
-        child: const ProfileScreen(),
+        child: const EditProfileScreen(),
       ),
+      BlocProvider<ProfileCubit>(
+        create: (context) => getIt<ProfileCubit>(),
+        child: const AddNewUserScreen(),
+      ),
+    ];
+
+    List<String> appBarTitles = [
+      'Home',
+      'Edit Profile',
+      'Add New User',
     ];
 
     return Scaffold(
         appBar: AppBar(
             backgroundColor: AppColors.grey500,
-            title: Text(
-              'Auth System',
-              style: AppFonts.inter18Black500
-                  .copyWith(color: AppColors.primaryBlue),
+            title:BlocBuilder<LayoutCubit, LayoutState>(
+              builder: (context, state) {
+                return Text(
+                  appBarTitles[context.watch<LayoutCubit>().navBarIndex],
+                  style: AppFonts.inter18Black500.copyWith(color: AppColors.primaryBlue),
+                );
+              },
             ),
             leading: Builder(
               builder: (context) {
@@ -91,7 +105,7 @@ class DrawerBar extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Profile'),
+            title: const Text('Edit Profile'),
             selected: context.watch<LayoutCubit>().navBarIndex == 1,
             onTap: () {
               context.read<LayoutCubit>().changeNavBarIndex(1);
@@ -99,11 +113,20 @@ class DrawerBar extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Login'),
+            title: const Text('Add New User'),
+            selected: context.watch<LayoutCubit>().navBarIndex == 2,
+            onTap: () {
+              context.read<LayoutCubit>().changeNavBarIndex(2);
+              // Navigator.pop(context);
+            },
+          ),
+          //todo
+          ListTile(
+            title: const Text('Logout'),
             selected: false,
             onTap: () {
               Navigator.pop(context);
-              Navigator.of(context).pushNamed(Routes.loginScreen);
+              Navigator.of(context).pushReplacementNamed(Routes.loginScreen);
             },
           ),
         ],

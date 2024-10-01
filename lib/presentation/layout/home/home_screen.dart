@@ -18,18 +18,20 @@ class HomeScreen extends StatelessWidget {
         height: AppConstants.screenHeight(context),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-          child: Wrap(
-            alignment: WrapAlignment.center,
-            spacing: 16,
-            runSpacing: 12,
-            children: [
-              ...List.generate(
-                users.length,
-                (index) {
-                  return UserCard(user: users[index],);
-                }
-              )
-            ],
+          child: SingleChildScrollView(
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 16,
+              runSpacing: 12,
+              children: [
+                ...List.generate(
+                  users.length,
+                  (index) {
+                    return UserCard(user: users[index],);
+                  }
+                )
+              ],
+            ),
           ),
         ),
       ),

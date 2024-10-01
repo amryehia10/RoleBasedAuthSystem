@@ -2,27 +2,27 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:role_based_auth_system/blocs/login/login_cubit.dart';
 import 'package:role_based_auth_system/blocs/signup/signup_cubit.dart';
 import 'package:role_based_auth_system/core/theming/fonts.dart';
 import 'package:role_based_auth_system/core/widgets/auth_rich_text.dart';
 import 'package:role_based_auth_system/core/widgets/custom_header.dart';
 import 'package:role_based_auth_system/core/widgets/custom_text_fields.dart';
 import 'package:role_based_auth_system/core/widgets/default_buttons.dart';
-import 'package:role_based_auth_system/core/widgets/snackbar.dart';
 import 'package:role_based_auth_system/presentation/auth/signup/widgets/otp_timer.dart';
 
 import '../../../core/helpers/constants.dart';
 import '../../../core/routing/routes.dart';
 
 
-class OtpScreen extends StatefulWidget {
-  const OtpScreen({super.key});
+class ForgetPasswordOtp extends StatefulWidget {
+  const ForgetPasswordOtp({super.key});
 
   @override
-  State<OtpScreen> createState() => _OtpScreenState();
+  State<ForgetPasswordOtp> createState() => _ForgetPasswordOtpState();
 }
 
-class _OtpScreenState extends State<OtpScreen> {
+class _ForgetPasswordOtpState extends State<ForgetPasswordOtp> {
   Timer? otpTimer;
   int secondsRemaining = 120;
   String formattedTime = "2:00";
@@ -79,7 +79,7 @@ class _OtpScreenState extends State<OtpScreen> {
               DefaultHeader(
                 header: "",
                 onBackPressed: () {
-                  Navigator.of(context).pushReplacementNamed(Routes.signupScreen, arguments: context.read<SignupCubit>());
+                  Navigator.of(context).pushReplacementNamed(Routes.forgetPasswordScreen, arguments: context.read<LoginCubit>());
                 },
               ),
                 Padding(
@@ -105,20 +105,23 @@ class _OtpScreenState extends State<OtpScreen> {
                   ],
                 ),
               ),
-              BlocBuilder<SignupCubit, SignupState>(
-                buildWhen: (previous, current) {
-                  return current is VerifyOTPLoadingState ||
-                    current is VerifyOTPSuccessState ||
-                    current is VerifyOTPErrorState;
-                },
+              BlocBuilder<LoginCubit, LoginState>(
+                // buildWhen: (previous, current) {
+                //   return current is CheckOtpSuccessState ||
+                //     current is CheckOtpErrorState ||
+                //     current is CheckOtpLoadingState ||
+                //     current is ForgetPasswordErrorState ||
+                //     current is ForgetPasswordSuccessState ||
+                //     current is ForgetPasswordLoadingState;
+                // },
                 builder: (context, state) {
                   return 
-                  state is VerifyOTPLoadingState
-                      ? const Padding(
-                          padding: EdgeInsets.only(top: 16.0),
-                          child: CircularProgressIndicator(),
-                        )
-                      : 
+                  // state is CheckOtpLoadingState
+                  //     ? const Padding(
+                  //         padding: EdgeInsets.only(top: 16.0),
+                  //         child: CircularProgressIndicator(),
+                  //       )
+                  //     : 
                       secondsRemaining == 0
                           ? Padding(
                               padding: const EdgeInsets.only(top: 16.0),
@@ -131,16 +134,16 @@ class _OtpScreenState extends State<OtpScreen> {
                                 buttonText: "Send again ",
                                 
                                 onTap: () async {
-                                  await context
-                                      .read<SignupCubit>()
-                                      .signUp()
-                                      .then(
-                                    (value) {
-                                      if (value) {
-                                        startTimer();
-                                      }
-                                    },
-                                  );
+                                  // await context
+                                  //     .read<SignupCubit>()
+                                  //     .sendOtp()
+                                  //     .then(
+                                  //   (value) {
+                                  //     if (value) {
+                                  //       startTimer();
+                                  //     }
+                                  //   },
+                                  // );
                                 },
                               ),
                             )
@@ -162,20 +165,21 @@ class _OtpScreenState extends State<OtpScreen> {
                             if (index < 5) {
                               FocusScope.of(context).requestFocus(
                                 context
-                                    .read<SignupCubit>()
+                                    .read<LoginCubit>()
                                     .codeFocusNode[index + 1],
                               );
                             } else {
                               context
-                                  .read<SignupCubit>()
+                                  .read<LoginCubit>()
                                   .codeFocusNode[index]
                                   .unfocus();
                             }
                           }
+                          // context.read<SignupCubit>().checkOTP();
                         },
                         controller:
-                            context.read<SignupCubit>().codeControllers[index],
-                        node: context.read<SignupCubit>().codeFocusNode[index],
+                            context.read<LoginCubit>().codeControllers[index],
+                        node: context.read<LoginCubit>().codeFocusNode[index],
                         isText: true,
                         width: 47,
                         height: 47,
@@ -188,36 +192,39 @@ class _OtpScreenState extends State<OtpScreen> {
               
             
               const Spacer(),
-              BlocConsumer<SignupCubit, SignupState>(
-                listenWhen: (previous, current) =>
-                  current is VerifyOTPSuccessState ||
-                  current is VerifyOTPErrorState,
+              BlocConsumer<LoginCubit, LoginState>(
+                // listenWhen: (previous, current) =>
+                //   current is CheckOtpLoadingState ||
+                //   current is CheckOtpSuccessState ||
+                //   current is CheckOtpErrorState,
                 listener: (context, state) {
-                  if (state is VerifyOTPSuccessState) {
-                    if (secondsRemaining != 120) {
-                      if (otpTimer != null) {
-                        otpTimer!.cancel();
-                      }
-                    }
-                    Navigator.of(context).pushNamed(Routes.createNewPasswordScreen, arguments: context.read<SignupCubit>());
-                  } else if (state is VerifyOTPErrorState) {
-                    defaultErrorSnackBar(
-                      context: context,
-                      message: state.errMsg,
-                    );
-                  }
+                  // if (state is CheckOtpSuccessState) {
+                  //   if (secondsRemaining != 120) {
+                  //     if (otpTimer != null) {
+                  //       otpTimer!.cancel();
+                  //     }
+                  //   }
+                  //   Navigator.of(context).pushReplacementNamed(
+                  //     Routes.createNewPasswordScreen,
+                  //     arguments: context.read<LoginCubit>());
+                  // } else if (state is CheckOtpErrorState) {
+                  //   defaultErrorSnackBar(
+                  //     context: context,
+                  //     message: state.errMsg,
+                  //   );
+                  // }
                 },
-                buildWhen: (previous, current) {
-                  return current is VerifyOTPLoadingState ||
-                  current is VerifyOTPSuccessState ||
-                  current is VerifyOTPErrorState;
-                },
+                // buildWhen: (previous, current) {
+                //   return current is CheckOtpLoadingState ||
+                //   current is CheckOtpSuccessState ||
+                //   current is CheckOtpErrorState;
+                // },
                 builder: (context, state) {
                   return DefaultButton(
                     function: () {
-                      context.read<SignupCubit>().verifyOtp();
+                      Navigator.of(context).pushNamed(Routes.createNewForgetPasswordScreen, arguments: context.read<LoginCubit>());
+                      // context.read<SignupCubit>().verifyOTP();
                     },
-                    loading: state is VerifyOTPLoadingState,
                     text: "Verify",
                     marginRight: 41,
                     marginLeft: 41,

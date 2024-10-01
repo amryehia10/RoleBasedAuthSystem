@@ -30,6 +30,12 @@ mixin _$SignupState {
     required TResult Function(
             String confirmPassword, TextFieldValidation validation)
         checkConfirmPassword,
+    required TResult Function() signUpLoading,
+    required TResult Function(String errMsg) signUpError,
+    required TResult Function(String successMsg) signUpSuccess,
+    required TResult Function() verifyOTPLoading,
+    required TResult Function(String errMsg) verifyOTPError,
+    required TResult Function(String successMsg) verifyOTPSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,6 +49,12 @@ mixin _$SignupState {
         checkNewPassword,
     TResult? Function(String confirmPassword, TextFieldValidation validation)?
         checkConfirmPassword,
+    TResult? Function()? signUpLoading,
+    TResult? Function(String errMsg)? signUpError,
+    TResult? Function(String successMsg)? signUpSuccess,
+    TResult? Function()? verifyOTPLoading,
+    TResult? Function(String errMsg)? verifyOTPError,
+    TResult? Function(String successMsg)? verifyOTPSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +68,12 @@ mixin _$SignupState {
         checkNewPassword,
     TResult Function(String confirmPassword, TextFieldValidation validation)?
         checkConfirmPassword,
+    TResult Function()? signUpLoading,
+    TResult Function(String errMsg)? signUpError,
+    TResult Function(String successMsg)? signUpSuccess,
+    TResult Function()? verifyOTPLoading,
+    TResult Function(String errMsg)? verifyOTPError,
+    TResult Function(String successMsg)? verifyOTPSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,6 +87,12 @@ mixin _$SignupState {
         checkNewPassword,
     required TResult Function(CheckConfirmPasswordValidationState value)
         checkConfirmPassword,
+    required TResult Function(SignUpLoadingState value) signUpLoading,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(VerifyOTPLoadingState value) verifyOTPLoading,
+    required TResult Function(VerifyOTPErrorState value) verifyOTPError,
+    required TResult Function(VerifyOTPSuccessState value) verifyOTPSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,6 +104,12 @@ mixin _$SignupState {
     TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
     TResult? Function(CheckConfirmPasswordValidationState value)?
         checkConfirmPassword,
+    TResult? Function(SignUpLoadingState value)? signUpLoading,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult? Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult? Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -91,6 +121,12 @@ mixin _$SignupState {
     TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
     TResult Function(CheckConfirmPasswordValidationState value)?
         checkConfirmPassword,
+    TResult Function(SignUpLoadingState value)? signUpLoading,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -164,6 +200,12 @@ class _$InitialImpl implements _Initial {
     required TResult Function(
             String confirmPassword, TextFieldValidation validation)
         checkConfirmPassword,
+    required TResult Function() signUpLoading,
+    required TResult Function(String errMsg) signUpError,
+    required TResult Function(String successMsg) signUpSuccess,
+    required TResult Function() verifyOTPLoading,
+    required TResult Function(String errMsg) verifyOTPError,
+    required TResult Function(String successMsg) verifyOTPSuccess,
   }) {
     return initial();
   }
@@ -180,6 +222,12 @@ class _$InitialImpl implements _Initial {
         checkNewPassword,
     TResult? Function(String confirmPassword, TextFieldValidation validation)?
         checkConfirmPassword,
+    TResult? Function()? signUpLoading,
+    TResult? Function(String errMsg)? signUpError,
+    TResult? Function(String successMsg)? signUpSuccess,
+    TResult? Function()? verifyOTPLoading,
+    TResult? Function(String errMsg)? verifyOTPError,
+    TResult? Function(String successMsg)? verifyOTPSuccess,
   }) {
     return initial?.call();
   }
@@ -196,6 +244,12 @@ class _$InitialImpl implements _Initial {
         checkNewPassword,
     TResult Function(String confirmPassword, TextFieldValidation validation)?
         checkConfirmPassword,
+    TResult Function()? signUpLoading,
+    TResult Function(String errMsg)? signUpError,
+    TResult Function(String successMsg)? signUpSuccess,
+    TResult Function()? verifyOTPLoading,
+    TResult Function(String errMsg)? verifyOTPError,
+    TResult Function(String successMsg)? verifyOTPSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -215,6 +269,12 @@ class _$InitialImpl implements _Initial {
         checkNewPassword,
     required TResult Function(CheckConfirmPasswordValidationState value)
         checkConfirmPassword,
+    required TResult Function(SignUpLoadingState value) signUpLoading,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(VerifyOTPLoadingState value) verifyOTPLoading,
+    required TResult Function(VerifyOTPErrorState value) verifyOTPError,
+    required TResult Function(VerifyOTPSuccessState value) verifyOTPSuccess,
   }) {
     return initial(this);
   }
@@ -229,6 +289,12 @@ class _$InitialImpl implements _Initial {
     TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
     TResult? Function(CheckConfirmPasswordValidationState value)?
         checkConfirmPassword,
+    TResult? Function(SignUpLoadingState value)? signUpLoading,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult? Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult? Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
   }) {
     return initial?.call(this);
   }
@@ -243,6 +309,12 @@ class _$InitialImpl implements _Initial {
     TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
     TResult Function(CheckConfirmPasswordValidationState value)?
         checkConfirmPassword,
+    TResult Function(SignUpLoadingState value)? signUpLoading,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -345,6 +417,12 @@ class _$CheckNameValidationStateImpl implements CheckNameValidationState {
     required TResult Function(
             String confirmPassword, TextFieldValidation validation)
         checkConfirmPassword,
+    required TResult Function() signUpLoading,
+    required TResult Function(String errMsg) signUpError,
+    required TResult Function(String successMsg) signUpSuccess,
+    required TResult Function() verifyOTPLoading,
+    required TResult Function(String errMsg) verifyOTPError,
+    required TResult Function(String successMsg) verifyOTPSuccess,
   }) {
     return checkName(name, validation);
   }
@@ -361,6 +439,12 @@ class _$CheckNameValidationStateImpl implements CheckNameValidationState {
         checkNewPassword,
     TResult? Function(String confirmPassword, TextFieldValidation validation)?
         checkConfirmPassword,
+    TResult? Function()? signUpLoading,
+    TResult? Function(String errMsg)? signUpError,
+    TResult? Function(String successMsg)? signUpSuccess,
+    TResult? Function()? verifyOTPLoading,
+    TResult? Function(String errMsg)? verifyOTPError,
+    TResult? Function(String successMsg)? verifyOTPSuccess,
   }) {
     return checkName?.call(name, validation);
   }
@@ -377,6 +461,12 @@ class _$CheckNameValidationStateImpl implements CheckNameValidationState {
         checkNewPassword,
     TResult Function(String confirmPassword, TextFieldValidation validation)?
         checkConfirmPassword,
+    TResult Function()? signUpLoading,
+    TResult Function(String errMsg)? signUpError,
+    TResult Function(String successMsg)? signUpSuccess,
+    TResult Function()? verifyOTPLoading,
+    TResult Function(String errMsg)? verifyOTPError,
+    TResult Function(String successMsg)? verifyOTPSuccess,
     required TResult orElse(),
   }) {
     if (checkName != null) {
@@ -396,6 +486,12 @@ class _$CheckNameValidationStateImpl implements CheckNameValidationState {
         checkNewPassword,
     required TResult Function(CheckConfirmPasswordValidationState value)
         checkConfirmPassword,
+    required TResult Function(SignUpLoadingState value) signUpLoading,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(VerifyOTPLoadingState value) verifyOTPLoading,
+    required TResult Function(VerifyOTPErrorState value) verifyOTPError,
+    required TResult Function(VerifyOTPSuccessState value) verifyOTPSuccess,
   }) {
     return checkName(this);
   }
@@ -410,6 +506,12 @@ class _$CheckNameValidationStateImpl implements CheckNameValidationState {
     TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
     TResult? Function(CheckConfirmPasswordValidationState value)?
         checkConfirmPassword,
+    TResult? Function(SignUpLoadingState value)? signUpLoading,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult? Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult? Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
   }) {
     return checkName?.call(this);
   }
@@ -424,6 +526,12 @@ class _$CheckNameValidationStateImpl implements CheckNameValidationState {
     TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
     TResult Function(CheckConfirmPasswordValidationState value)?
         checkConfirmPassword,
+    TResult Function(SignUpLoadingState value)? signUpLoading,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
     required TResult orElse(),
   }) {
     if (checkName != null) {
@@ -535,6 +643,12 @@ class _$CheckEmailValidationStateImpl implements CheckEmailValidationState {
     required TResult Function(
             String confirmPassword, TextFieldValidation validation)
         checkConfirmPassword,
+    required TResult Function() signUpLoading,
+    required TResult Function(String errMsg) signUpError,
+    required TResult Function(String successMsg) signUpSuccess,
+    required TResult Function() verifyOTPLoading,
+    required TResult Function(String errMsg) verifyOTPError,
+    required TResult Function(String successMsg) verifyOTPSuccess,
   }) {
     return checkEmail(email, validation);
   }
@@ -551,6 +665,12 @@ class _$CheckEmailValidationStateImpl implements CheckEmailValidationState {
         checkNewPassword,
     TResult? Function(String confirmPassword, TextFieldValidation validation)?
         checkConfirmPassword,
+    TResult? Function()? signUpLoading,
+    TResult? Function(String errMsg)? signUpError,
+    TResult? Function(String successMsg)? signUpSuccess,
+    TResult? Function()? verifyOTPLoading,
+    TResult? Function(String errMsg)? verifyOTPError,
+    TResult? Function(String successMsg)? verifyOTPSuccess,
   }) {
     return checkEmail?.call(email, validation);
   }
@@ -567,6 +687,12 @@ class _$CheckEmailValidationStateImpl implements CheckEmailValidationState {
         checkNewPassword,
     TResult Function(String confirmPassword, TextFieldValidation validation)?
         checkConfirmPassword,
+    TResult Function()? signUpLoading,
+    TResult Function(String errMsg)? signUpError,
+    TResult Function(String successMsg)? signUpSuccess,
+    TResult Function()? verifyOTPLoading,
+    TResult Function(String errMsg)? verifyOTPError,
+    TResult Function(String successMsg)? verifyOTPSuccess,
     required TResult orElse(),
   }) {
     if (checkEmail != null) {
@@ -586,6 +712,12 @@ class _$CheckEmailValidationStateImpl implements CheckEmailValidationState {
         checkNewPassword,
     required TResult Function(CheckConfirmPasswordValidationState value)
         checkConfirmPassword,
+    required TResult Function(SignUpLoadingState value) signUpLoading,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(VerifyOTPLoadingState value) verifyOTPLoading,
+    required TResult Function(VerifyOTPErrorState value) verifyOTPError,
+    required TResult Function(VerifyOTPSuccessState value) verifyOTPSuccess,
   }) {
     return checkEmail(this);
   }
@@ -600,6 +732,12 @@ class _$CheckEmailValidationStateImpl implements CheckEmailValidationState {
     TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
     TResult? Function(CheckConfirmPasswordValidationState value)?
         checkConfirmPassword,
+    TResult? Function(SignUpLoadingState value)? signUpLoading,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult? Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult? Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
   }) {
     return checkEmail?.call(this);
   }
@@ -614,6 +752,12 @@ class _$CheckEmailValidationStateImpl implements CheckEmailValidationState {
     TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
     TResult Function(CheckConfirmPasswordValidationState value)?
         checkConfirmPassword,
+    TResult Function(SignUpLoadingState value)? signUpLoading,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
     required TResult orElse(),
   }) {
     if (checkEmail != null) {
@@ -725,6 +869,12 @@ class _$CheckAddressValidationStateImpl implements CheckAddressValidationState {
     required TResult Function(
             String confirmPassword, TextFieldValidation validation)
         checkConfirmPassword,
+    required TResult Function() signUpLoading,
+    required TResult Function(String errMsg) signUpError,
+    required TResult Function(String successMsg) signUpSuccess,
+    required TResult Function() verifyOTPLoading,
+    required TResult Function(String errMsg) verifyOTPError,
+    required TResult Function(String successMsg) verifyOTPSuccess,
   }) {
     return checkAddress(address, validation);
   }
@@ -741,6 +891,12 @@ class _$CheckAddressValidationStateImpl implements CheckAddressValidationState {
         checkNewPassword,
     TResult? Function(String confirmPassword, TextFieldValidation validation)?
         checkConfirmPassword,
+    TResult? Function()? signUpLoading,
+    TResult? Function(String errMsg)? signUpError,
+    TResult? Function(String successMsg)? signUpSuccess,
+    TResult? Function()? verifyOTPLoading,
+    TResult? Function(String errMsg)? verifyOTPError,
+    TResult? Function(String successMsg)? verifyOTPSuccess,
   }) {
     return checkAddress?.call(address, validation);
   }
@@ -757,6 +913,12 @@ class _$CheckAddressValidationStateImpl implements CheckAddressValidationState {
         checkNewPassword,
     TResult Function(String confirmPassword, TextFieldValidation validation)?
         checkConfirmPassword,
+    TResult Function()? signUpLoading,
+    TResult Function(String errMsg)? signUpError,
+    TResult Function(String successMsg)? signUpSuccess,
+    TResult Function()? verifyOTPLoading,
+    TResult Function(String errMsg)? verifyOTPError,
+    TResult Function(String successMsg)? verifyOTPSuccess,
     required TResult orElse(),
   }) {
     if (checkAddress != null) {
@@ -776,6 +938,12 @@ class _$CheckAddressValidationStateImpl implements CheckAddressValidationState {
         checkNewPassword,
     required TResult Function(CheckConfirmPasswordValidationState value)
         checkConfirmPassword,
+    required TResult Function(SignUpLoadingState value) signUpLoading,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(VerifyOTPLoadingState value) verifyOTPLoading,
+    required TResult Function(VerifyOTPErrorState value) verifyOTPError,
+    required TResult Function(VerifyOTPSuccessState value) verifyOTPSuccess,
   }) {
     return checkAddress(this);
   }
@@ -790,6 +958,12 @@ class _$CheckAddressValidationStateImpl implements CheckAddressValidationState {
     TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
     TResult? Function(CheckConfirmPasswordValidationState value)?
         checkConfirmPassword,
+    TResult? Function(SignUpLoadingState value)? signUpLoading,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult? Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult? Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
   }) {
     return checkAddress?.call(this);
   }
@@ -804,6 +978,12 @@ class _$CheckAddressValidationStateImpl implements CheckAddressValidationState {
     TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
     TResult Function(CheckConfirmPasswordValidationState value)?
         checkConfirmPassword,
+    TResult Function(SignUpLoadingState value)? signUpLoading,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
     required TResult orElse(),
   }) {
     if (checkAddress != null) {
@@ -919,6 +1099,12 @@ class _$CheckNewPasswordValidationStateImpl
     required TResult Function(
             String confirmPassword, TextFieldValidation validation)
         checkConfirmPassword,
+    required TResult Function() signUpLoading,
+    required TResult Function(String errMsg) signUpError,
+    required TResult Function(String successMsg) signUpSuccess,
+    required TResult Function() verifyOTPLoading,
+    required TResult Function(String errMsg) verifyOTPError,
+    required TResult Function(String successMsg) verifyOTPSuccess,
   }) {
     return checkNewPassword(password, validation);
   }
@@ -935,6 +1121,12 @@ class _$CheckNewPasswordValidationStateImpl
         checkNewPassword,
     TResult? Function(String confirmPassword, TextFieldValidation validation)?
         checkConfirmPassword,
+    TResult? Function()? signUpLoading,
+    TResult? Function(String errMsg)? signUpError,
+    TResult? Function(String successMsg)? signUpSuccess,
+    TResult? Function()? verifyOTPLoading,
+    TResult? Function(String errMsg)? verifyOTPError,
+    TResult? Function(String successMsg)? verifyOTPSuccess,
   }) {
     return checkNewPassword?.call(password, validation);
   }
@@ -951,6 +1143,12 @@ class _$CheckNewPasswordValidationStateImpl
         checkNewPassword,
     TResult Function(String confirmPassword, TextFieldValidation validation)?
         checkConfirmPassword,
+    TResult Function()? signUpLoading,
+    TResult Function(String errMsg)? signUpError,
+    TResult Function(String successMsg)? signUpSuccess,
+    TResult Function()? verifyOTPLoading,
+    TResult Function(String errMsg)? verifyOTPError,
+    TResult Function(String successMsg)? verifyOTPSuccess,
     required TResult orElse(),
   }) {
     if (checkNewPassword != null) {
@@ -970,6 +1168,12 @@ class _$CheckNewPasswordValidationStateImpl
         checkNewPassword,
     required TResult Function(CheckConfirmPasswordValidationState value)
         checkConfirmPassword,
+    required TResult Function(SignUpLoadingState value) signUpLoading,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(VerifyOTPLoadingState value) verifyOTPLoading,
+    required TResult Function(VerifyOTPErrorState value) verifyOTPError,
+    required TResult Function(VerifyOTPSuccessState value) verifyOTPSuccess,
   }) {
     return checkNewPassword(this);
   }
@@ -984,6 +1188,12 @@ class _$CheckNewPasswordValidationStateImpl
     TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
     TResult? Function(CheckConfirmPasswordValidationState value)?
         checkConfirmPassword,
+    TResult? Function(SignUpLoadingState value)? signUpLoading,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult? Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult? Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
   }) {
     return checkNewPassword?.call(this);
   }
@@ -998,6 +1208,12 @@ class _$CheckNewPasswordValidationStateImpl
     TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
     TResult Function(CheckConfirmPasswordValidationState value)?
         checkConfirmPassword,
+    TResult Function(SignUpLoadingState value)? signUpLoading,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
     required TResult orElse(),
   }) {
     if (checkNewPassword != null) {
@@ -1114,6 +1330,12 @@ class _$CheckConfirmPasswordValidationStateImpl
     required TResult Function(
             String confirmPassword, TextFieldValidation validation)
         checkConfirmPassword,
+    required TResult Function() signUpLoading,
+    required TResult Function(String errMsg) signUpError,
+    required TResult Function(String successMsg) signUpSuccess,
+    required TResult Function() verifyOTPLoading,
+    required TResult Function(String errMsg) verifyOTPError,
+    required TResult Function(String successMsg) verifyOTPSuccess,
   }) {
     return checkConfirmPassword(confirmPassword, validation);
   }
@@ -1130,6 +1352,12 @@ class _$CheckConfirmPasswordValidationStateImpl
         checkNewPassword,
     TResult? Function(String confirmPassword, TextFieldValidation validation)?
         checkConfirmPassword,
+    TResult? Function()? signUpLoading,
+    TResult? Function(String errMsg)? signUpError,
+    TResult? Function(String successMsg)? signUpSuccess,
+    TResult? Function()? verifyOTPLoading,
+    TResult? Function(String errMsg)? verifyOTPError,
+    TResult? Function(String successMsg)? verifyOTPSuccess,
   }) {
     return checkConfirmPassword?.call(confirmPassword, validation);
   }
@@ -1146,6 +1374,12 @@ class _$CheckConfirmPasswordValidationStateImpl
         checkNewPassword,
     TResult Function(String confirmPassword, TextFieldValidation validation)?
         checkConfirmPassword,
+    TResult Function()? signUpLoading,
+    TResult Function(String errMsg)? signUpError,
+    TResult Function(String successMsg)? signUpSuccess,
+    TResult Function()? verifyOTPLoading,
+    TResult Function(String errMsg)? verifyOTPError,
+    TResult Function(String successMsg)? verifyOTPSuccess,
     required TResult orElse(),
   }) {
     if (checkConfirmPassword != null) {
@@ -1165,6 +1399,12 @@ class _$CheckConfirmPasswordValidationStateImpl
         checkNewPassword,
     required TResult Function(CheckConfirmPasswordValidationState value)
         checkConfirmPassword,
+    required TResult Function(SignUpLoadingState value) signUpLoading,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(VerifyOTPLoadingState value) verifyOTPLoading,
+    required TResult Function(VerifyOTPErrorState value) verifyOTPError,
+    required TResult Function(VerifyOTPSuccessState value) verifyOTPSuccess,
   }) {
     return checkConfirmPassword(this);
   }
@@ -1179,6 +1419,12 @@ class _$CheckConfirmPasswordValidationStateImpl
     TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
     TResult? Function(CheckConfirmPasswordValidationState value)?
         checkConfirmPassword,
+    TResult? Function(SignUpLoadingState value)? signUpLoading,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult? Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult? Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
   }) {
     return checkConfirmPassword?.call(this);
   }
@@ -1193,6 +1439,12 @@ class _$CheckConfirmPasswordValidationStateImpl
     TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
     TResult Function(CheckConfirmPasswordValidationState value)?
         checkConfirmPassword,
+    TResult Function(SignUpLoadingState value)? signUpLoading,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
     required TResult orElse(),
   }) {
     if (checkConfirmPassword != null) {
@@ -1213,5 +1465,1210 @@ abstract class CheckConfirmPasswordValidationState implements SignupState {
   @JsonKey(ignore: true)
   _$$CheckConfirmPasswordValidationStateImplCopyWith<
           _$CheckConfirmPasswordValidationStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SignUpLoadingStateImplCopyWith<$Res> {
+  factory _$$SignUpLoadingStateImplCopyWith(_$SignUpLoadingStateImpl value,
+          $Res Function(_$SignUpLoadingStateImpl) then) =
+      __$$SignUpLoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SignUpLoadingStateImplCopyWithImpl<$Res>
+    extends _$SignupStateCopyWithImpl<$Res, _$SignUpLoadingStateImpl>
+    implements _$$SignUpLoadingStateImplCopyWith<$Res> {
+  __$$SignUpLoadingStateImplCopyWithImpl(_$SignUpLoadingStateImpl _value,
+      $Res Function(_$SignUpLoadingStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SignUpLoadingStateImpl implements SignUpLoadingState {
+  const _$SignUpLoadingStateImpl();
+
+  @override
+  String toString() {
+    return 'SignupState.signUpLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SignUpLoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String name, TextFieldValidation validation)
+        checkName,
+    required TResult Function(String email, TextFieldValidation validation)
+        checkEmail,
+    required TResult Function(String address, TextFieldValidation validation)
+        checkAddress,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkNewPassword,
+    required TResult Function(
+            String confirmPassword, TextFieldValidation validation)
+        checkConfirmPassword,
+    required TResult Function() signUpLoading,
+    required TResult Function(String errMsg) signUpError,
+    required TResult Function(String successMsg) signUpSuccess,
+    required TResult Function() verifyOTPLoading,
+    required TResult Function(String errMsg) verifyOTPError,
+    required TResult Function(String successMsg) verifyOTPSuccess,
+  }) {
+    return signUpLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String name, TextFieldValidation validation)? checkName,
+    TResult? Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult? Function(String address, TextFieldValidation validation)?
+        checkAddress,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult? Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult? Function()? signUpLoading,
+    TResult? Function(String errMsg)? signUpError,
+    TResult? Function(String successMsg)? signUpSuccess,
+    TResult? Function()? verifyOTPLoading,
+    TResult? Function(String errMsg)? verifyOTPError,
+    TResult? Function(String successMsg)? verifyOTPSuccess,
+  }) {
+    return signUpLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String name, TextFieldValidation validation)? checkName,
+    TResult Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult Function(String address, TextFieldValidation validation)?
+        checkAddress,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult Function()? signUpLoading,
+    TResult Function(String errMsg)? signUpError,
+    TResult Function(String successMsg)? signUpSuccess,
+    TResult Function()? verifyOTPLoading,
+    TResult Function(String errMsg)? verifyOTPError,
+    TResult Function(String successMsg)? verifyOTPSuccess,
+    required TResult orElse(),
+  }) {
+    if (signUpLoading != null) {
+      return signUpLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CheckNameValidationState value) checkName,
+    required TResult Function(CheckEmailValidationState value) checkEmail,
+    required TResult Function(CheckAddressValidationState value) checkAddress,
+    required TResult Function(CheckNewPasswordValidationState value)
+        checkNewPassword,
+    required TResult Function(CheckConfirmPasswordValidationState value)
+        checkConfirmPassword,
+    required TResult Function(SignUpLoadingState value) signUpLoading,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(VerifyOTPLoadingState value) verifyOTPLoading,
+    required TResult Function(VerifyOTPErrorState value) verifyOTPError,
+    required TResult Function(VerifyOTPSuccessState value) verifyOTPSuccess,
+  }) {
+    return signUpLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CheckNameValidationState value)? checkName,
+    TResult? Function(CheckEmailValidationState value)? checkEmail,
+    TResult? Function(CheckAddressValidationState value)? checkAddress,
+    TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult? Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult? Function(SignUpLoadingState value)? signUpLoading,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult? Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult? Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
+  }) {
+    return signUpLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CheckNameValidationState value)? checkName,
+    TResult Function(CheckEmailValidationState value)? checkEmail,
+    TResult Function(CheckAddressValidationState value)? checkAddress,
+    TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult Function(SignUpLoadingState value)? signUpLoading,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
+    required TResult orElse(),
+  }) {
+    if (signUpLoading != null) {
+      return signUpLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignUpLoadingState implements SignupState {
+  const factory SignUpLoadingState() = _$SignUpLoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$SignUpErrorStateImplCopyWith<$Res> {
+  factory _$$SignUpErrorStateImplCopyWith(_$SignUpErrorStateImpl value,
+          $Res Function(_$SignUpErrorStateImpl) then) =
+      __$$SignUpErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String errMsg});
+}
+
+/// @nodoc
+class __$$SignUpErrorStateImplCopyWithImpl<$Res>
+    extends _$SignupStateCopyWithImpl<$Res, _$SignUpErrorStateImpl>
+    implements _$$SignUpErrorStateImplCopyWith<$Res> {
+  __$$SignUpErrorStateImplCopyWithImpl(_$SignUpErrorStateImpl _value,
+      $Res Function(_$SignUpErrorStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errMsg = null,
+  }) {
+    return _then(_$SignUpErrorStateImpl(
+      errMsg: null == errMsg
+          ? _value.errMsg
+          : errMsg // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SignUpErrorStateImpl implements SignUpErrorState {
+  const _$SignUpErrorStateImpl({required this.errMsg});
+
+  @override
+  final String errMsg;
+
+  @override
+  String toString() {
+    return 'SignupState.signUpError(errMsg: $errMsg)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SignUpErrorStateImpl &&
+            (identical(other.errMsg, errMsg) || other.errMsg == errMsg));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errMsg);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SignUpErrorStateImplCopyWith<_$SignUpErrorStateImpl> get copyWith =>
+      __$$SignUpErrorStateImplCopyWithImpl<_$SignUpErrorStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String name, TextFieldValidation validation)
+        checkName,
+    required TResult Function(String email, TextFieldValidation validation)
+        checkEmail,
+    required TResult Function(String address, TextFieldValidation validation)
+        checkAddress,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkNewPassword,
+    required TResult Function(
+            String confirmPassword, TextFieldValidation validation)
+        checkConfirmPassword,
+    required TResult Function() signUpLoading,
+    required TResult Function(String errMsg) signUpError,
+    required TResult Function(String successMsg) signUpSuccess,
+    required TResult Function() verifyOTPLoading,
+    required TResult Function(String errMsg) verifyOTPError,
+    required TResult Function(String successMsg) verifyOTPSuccess,
+  }) {
+    return signUpError(errMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String name, TextFieldValidation validation)? checkName,
+    TResult? Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult? Function(String address, TextFieldValidation validation)?
+        checkAddress,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult? Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult? Function()? signUpLoading,
+    TResult? Function(String errMsg)? signUpError,
+    TResult? Function(String successMsg)? signUpSuccess,
+    TResult? Function()? verifyOTPLoading,
+    TResult? Function(String errMsg)? verifyOTPError,
+    TResult? Function(String successMsg)? verifyOTPSuccess,
+  }) {
+    return signUpError?.call(errMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String name, TextFieldValidation validation)? checkName,
+    TResult Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult Function(String address, TextFieldValidation validation)?
+        checkAddress,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult Function()? signUpLoading,
+    TResult Function(String errMsg)? signUpError,
+    TResult Function(String successMsg)? signUpSuccess,
+    TResult Function()? verifyOTPLoading,
+    TResult Function(String errMsg)? verifyOTPError,
+    TResult Function(String successMsg)? verifyOTPSuccess,
+    required TResult orElse(),
+  }) {
+    if (signUpError != null) {
+      return signUpError(errMsg);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CheckNameValidationState value) checkName,
+    required TResult Function(CheckEmailValidationState value) checkEmail,
+    required TResult Function(CheckAddressValidationState value) checkAddress,
+    required TResult Function(CheckNewPasswordValidationState value)
+        checkNewPassword,
+    required TResult Function(CheckConfirmPasswordValidationState value)
+        checkConfirmPassword,
+    required TResult Function(SignUpLoadingState value) signUpLoading,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(VerifyOTPLoadingState value) verifyOTPLoading,
+    required TResult Function(VerifyOTPErrorState value) verifyOTPError,
+    required TResult Function(VerifyOTPSuccessState value) verifyOTPSuccess,
+  }) {
+    return signUpError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CheckNameValidationState value)? checkName,
+    TResult? Function(CheckEmailValidationState value)? checkEmail,
+    TResult? Function(CheckAddressValidationState value)? checkAddress,
+    TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult? Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult? Function(SignUpLoadingState value)? signUpLoading,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult? Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult? Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
+  }) {
+    return signUpError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CheckNameValidationState value)? checkName,
+    TResult Function(CheckEmailValidationState value)? checkEmail,
+    TResult Function(CheckAddressValidationState value)? checkAddress,
+    TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult Function(SignUpLoadingState value)? signUpLoading,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
+    required TResult orElse(),
+  }) {
+    if (signUpError != null) {
+      return signUpError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignUpErrorState implements SignupState {
+  const factory SignUpErrorState({required final String errMsg}) =
+      _$SignUpErrorStateImpl;
+
+  String get errMsg;
+  @JsonKey(ignore: true)
+  _$$SignUpErrorStateImplCopyWith<_$SignUpErrorStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SignUpSuccessStateImplCopyWith<$Res> {
+  factory _$$SignUpSuccessStateImplCopyWith(_$SignUpSuccessStateImpl value,
+          $Res Function(_$SignUpSuccessStateImpl) then) =
+      __$$SignUpSuccessStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String successMsg});
+}
+
+/// @nodoc
+class __$$SignUpSuccessStateImplCopyWithImpl<$Res>
+    extends _$SignupStateCopyWithImpl<$Res, _$SignUpSuccessStateImpl>
+    implements _$$SignUpSuccessStateImplCopyWith<$Res> {
+  __$$SignUpSuccessStateImplCopyWithImpl(_$SignUpSuccessStateImpl _value,
+      $Res Function(_$SignUpSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? successMsg = null,
+  }) {
+    return _then(_$SignUpSuccessStateImpl(
+      successMsg: null == successMsg
+          ? _value.successMsg
+          : successMsg // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SignUpSuccessStateImpl implements SignUpSuccessState {
+  const _$SignUpSuccessStateImpl({required this.successMsg});
+
+  @override
+  final String successMsg;
+
+  @override
+  String toString() {
+    return 'SignupState.signUpSuccess(successMsg: $successMsg)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SignUpSuccessStateImpl &&
+            (identical(other.successMsg, successMsg) ||
+                other.successMsg == successMsg));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, successMsg);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SignUpSuccessStateImplCopyWith<_$SignUpSuccessStateImpl> get copyWith =>
+      __$$SignUpSuccessStateImplCopyWithImpl<_$SignUpSuccessStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String name, TextFieldValidation validation)
+        checkName,
+    required TResult Function(String email, TextFieldValidation validation)
+        checkEmail,
+    required TResult Function(String address, TextFieldValidation validation)
+        checkAddress,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkNewPassword,
+    required TResult Function(
+            String confirmPassword, TextFieldValidation validation)
+        checkConfirmPassword,
+    required TResult Function() signUpLoading,
+    required TResult Function(String errMsg) signUpError,
+    required TResult Function(String successMsg) signUpSuccess,
+    required TResult Function() verifyOTPLoading,
+    required TResult Function(String errMsg) verifyOTPError,
+    required TResult Function(String successMsg) verifyOTPSuccess,
+  }) {
+    return signUpSuccess(successMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String name, TextFieldValidation validation)? checkName,
+    TResult? Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult? Function(String address, TextFieldValidation validation)?
+        checkAddress,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult? Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult? Function()? signUpLoading,
+    TResult? Function(String errMsg)? signUpError,
+    TResult? Function(String successMsg)? signUpSuccess,
+    TResult? Function()? verifyOTPLoading,
+    TResult? Function(String errMsg)? verifyOTPError,
+    TResult? Function(String successMsg)? verifyOTPSuccess,
+  }) {
+    return signUpSuccess?.call(successMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String name, TextFieldValidation validation)? checkName,
+    TResult Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult Function(String address, TextFieldValidation validation)?
+        checkAddress,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult Function()? signUpLoading,
+    TResult Function(String errMsg)? signUpError,
+    TResult Function(String successMsg)? signUpSuccess,
+    TResult Function()? verifyOTPLoading,
+    TResult Function(String errMsg)? verifyOTPError,
+    TResult Function(String successMsg)? verifyOTPSuccess,
+    required TResult orElse(),
+  }) {
+    if (signUpSuccess != null) {
+      return signUpSuccess(successMsg);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CheckNameValidationState value) checkName,
+    required TResult Function(CheckEmailValidationState value) checkEmail,
+    required TResult Function(CheckAddressValidationState value) checkAddress,
+    required TResult Function(CheckNewPasswordValidationState value)
+        checkNewPassword,
+    required TResult Function(CheckConfirmPasswordValidationState value)
+        checkConfirmPassword,
+    required TResult Function(SignUpLoadingState value) signUpLoading,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(VerifyOTPLoadingState value) verifyOTPLoading,
+    required TResult Function(VerifyOTPErrorState value) verifyOTPError,
+    required TResult Function(VerifyOTPSuccessState value) verifyOTPSuccess,
+  }) {
+    return signUpSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CheckNameValidationState value)? checkName,
+    TResult? Function(CheckEmailValidationState value)? checkEmail,
+    TResult? Function(CheckAddressValidationState value)? checkAddress,
+    TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult? Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult? Function(SignUpLoadingState value)? signUpLoading,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult? Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult? Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
+  }) {
+    return signUpSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CheckNameValidationState value)? checkName,
+    TResult Function(CheckEmailValidationState value)? checkEmail,
+    TResult Function(CheckAddressValidationState value)? checkAddress,
+    TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult Function(SignUpLoadingState value)? signUpLoading,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
+    required TResult orElse(),
+  }) {
+    if (signUpSuccess != null) {
+      return signUpSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignUpSuccessState implements SignupState {
+  const factory SignUpSuccessState({required final String successMsg}) =
+      _$SignUpSuccessStateImpl;
+
+  String get successMsg;
+  @JsonKey(ignore: true)
+  _$$SignUpSuccessStateImplCopyWith<_$SignUpSuccessStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$VerifyOTPLoadingStateImplCopyWith<$Res> {
+  factory _$$VerifyOTPLoadingStateImplCopyWith(
+          _$VerifyOTPLoadingStateImpl value,
+          $Res Function(_$VerifyOTPLoadingStateImpl) then) =
+      __$$VerifyOTPLoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$VerifyOTPLoadingStateImplCopyWithImpl<$Res>
+    extends _$SignupStateCopyWithImpl<$Res, _$VerifyOTPLoadingStateImpl>
+    implements _$$VerifyOTPLoadingStateImplCopyWith<$Res> {
+  __$$VerifyOTPLoadingStateImplCopyWithImpl(_$VerifyOTPLoadingStateImpl _value,
+      $Res Function(_$VerifyOTPLoadingStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$VerifyOTPLoadingStateImpl implements VerifyOTPLoadingState {
+  const _$VerifyOTPLoadingStateImpl();
+
+  @override
+  String toString() {
+    return 'SignupState.verifyOTPLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyOTPLoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String name, TextFieldValidation validation)
+        checkName,
+    required TResult Function(String email, TextFieldValidation validation)
+        checkEmail,
+    required TResult Function(String address, TextFieldValidation validation)
+        checkAddress,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkNewPassword,
+    required TResult Function(
+            String confirmPassword, TextFieldValidation validation)
+        checkConfirmPassword,
+    required TResult Function() signUpLoading,
+    required TResult Function(String errMsg) signUpError,
+    required TResult Function(String successMsg) signUpSuccess,
+    required TResult Function() verifyOTPLoading,
+    required TResult Function(String errMsg) verifyOTPError,
+    required TResult Function(String successMsg) verifyOTPSuccess,
+  }) {
+    return verifyOTPLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String name, TextFieldValidation validation)? checkName,
+    TResult? Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult? Function(String address, TextFieldValidation validation)?
+        checkAddress,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult? Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult? Function()? signUpLoading,
+    TResult? Function(String errMsg)? signUpError,
+    TResult? Function(String successMsg)? signUpSuccess,
+    TResult? Function()? verifyOTPLoading,
+    TResult? Function(String errMsg)? verifyOTPError,
+    TResult? Function(String successMsg)? verifyOTPSuccess,
+  }) {
+    return verifyOTPLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String name, TextFieldValidation validation)? checkName,
+    TResult Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult Function(String address, TextFieldValidation validation)?
+        checkAddress,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult Function()? signUpLoading,
+    TResult Function(String errMsg)? signUpError,
+    TResult Function(String successMsg)? signUpSuccess,
+    TResult Function()? verifyOTPLoading,
+    TResult Function(String errMsg)? verifyOTPError,
+    TResult Function(String successMsg)? verifyOTPSuccess,
+    required TResult orElse(),
+  }) {
+    if (verifyOTPLoading != null) {
+      return verifyOTPLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CheckNameValidationState value) checkName,
+    required TResult Function(CheckEmailValidationState value) checkEmail,
+    required TResult Function(CheckAddressValidationState value) checkAddress,
+    required TResult Function(CheckNewPasswordValidationState value)
+        checkNewPassword,
+    required TResult Function(CheckConfirmPasswordValidationState value)
+        checkConfirmPassword,
+    required TResult Function(SignUpLoadingState value) signUpLoading,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(VerifyOTPLoadingState value) verifyOTPLoading,
+    required TResult Function(VerifyOTPErrorState value) verifyOTPError,
+    required TResult Function(VerifyOTPSuccessState value) verifyOTPSuccess,
+  }) {
+    return verifyOTPLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CheckNameValidationState value)? checkName,
+    TResult? Function(CheckEmailValidationState value)? checkEmail,
+    TResult? Function(CheckAddressValidationState value)? checkAddress,
+    TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult? Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult? Function(SignUpLoadingState value)? signUpLoading,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult? Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult? Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
+  }) {
+    return verifyOTPLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CheckNameValidationState value)? checkName,
+    TResult Function(CheckEmailValidationState value)? checkEmail,
+    TResult Function(CheckAddressValidationState value)? checkAddress,
+    TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult Function(SignUpLoadingState value)? signUpLoading,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
+    required TResult orElse(),
+  }) {
+    if (verifyOTPLoading != null) {
+      return verifyOTPLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VerifyOTPLoadingState implements SignupState {
+  const factory VerifyOTPLoadingState() = _$VerifyOTPLoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$VerifyOTPErrorStateImplCopyWith<$Res> {
+  factory _$$VerifyOTPErrorStateImplCopyWith(_$VerifyOTPErrorStateImpl value,
+          $Res Function(_$VerifyOTPErrorStateImpl) then) =
+      __$$VerifyOTPErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String errMsg});
+}
+
+/// @nodoc
+class __$$VerifyOTPErrorStateImplCopyWithImpl<$Res>
+    extends _$SignupStateCopyWithImpl<$Res, _$VerifyOTPErrorStateImpl>
+    implements _$$VerifyOTPErrorStateImplCopyWith<$Res> {
+  __$$VerifyOTPErrorStateImplCopyWithImpl(_$VerifyOTPErrorStateImpl _value,
+      $Res Function(_$VerifyOTPErrorStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errMsg = null,
+  }) {
+    return _then(_$VerifyOTPErrorStateImpl(
+      errMsg: null == errMsg
+          ? _value.errMsg
+          : errMsg // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$VerifyOTPErrorStateImpl implements VerifyOTPErrorState {
+  const _$VerifyOTPErrorStateImpl({required this.errMsg});
+
+  @override
+  final String errMsg;
+
+  @override
+  String toString() {
+    return 'SignupState.verifyOTPError(errMsg: $errMsg)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyOTPErrorStateImpl &&
+            (identical(other.errMsg, errMsg) || other.errMsg == errMsg));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errMsg);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VerifyOTPErrorStateImplCopyWith<_$VerifyOTPErrorStateImpl> get copyWith =>
+      __$$VerifyOTPErrorStateImplCopyWithImpl<_$VerifyOTPErrorStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String name, TextFieldValidation validation)
+        checkName,
+    required TResult Function(String email, TextFieldValidation validation)
+        checkEmail,
+    required TResult Function(String address, TextFieldValidation validation)
+        checkAddress,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkNewPassword,
+    required TResult Function(
+            String confirmPassword, TextFieldValidation validation)
+        checkConfirmPassword,
+    required TResult Function() signUpLoading,
+    required TResult Function(String errMsg) signUpError,
+    required TResult Function(String successMsg) signUpSuccess,
+    required TResult Function() verifyOTPLoading,
+    required TResult Function(String errMsg) verifyOTPError,
+    required TResult Function(String successMsg) verifyOTPSuccess,
+  }) {
+    return verifyOTPError(errMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String name, TextFieldValidation validation)? checkName,
+    TResult? Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult? Function(String address, TextFieldValidation validation)?
+        checkAddress,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult? Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult? Function()? signUpLoading,
+    TResult? Function(String errMsg)? signUpError,
+    TResult? Function(String successMsg)? signUpSuccess,
+    TResult? Function()? verifyOTPLoading,
+    TResult? Function(String errMsg)? verifyOTPError,
+    TResult? Function(String successMsg)? verifyOTPSuccess,
+  }) {
+    return verifyOTPError?.call(errMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String name, TextFieldValidation validation)? checkName,
+    TResult Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult Function(String address, TextFieldValidation validation)?
+        checkAddress,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult Function()? signUpLoading,
+    TResult Function(String errMsg)? signUpError,
+    TResult Function(String successMsg)? signUpSuccess,
+    TResult Function()? verifyOTPLoading,
+    TResult Function(String errMsg)? verifyOTPError,
+    TResult Function(String successMsg)? verifyOTPSuccess,
+    required TResult orElse(),
+  }) {
+    if (verifyOTPError != null) {
+      return verifyOTPError(errMsg);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CheckNameValidationState value) checkName,
+    required TResult Function(CheckEmailValidationState value) checkEmail,
+    required TResult Function(CheckAddressValidationState value) checkAddress,
+    required TResult Function(CheckNewPasswordValidationState value)
+        checkNewPassword,
+    required TResult Function(CheckConfirmPasswordValidationState value)
+        checkConfirmPassword,
+    required TResult Function(SignUpLoadingState value) signUpLoading,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(VerifyOTPLoadingState value) verifyOTPLoading,
+    required TResult Function(VerifyOTPErrorState value) verifyOTPError,
+    required TResult Function(VerifyOTPSuccessState value) verifyOTPSuccess,
+  }) {
+    return verifyOTPError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CheckNameValidationState value)? checkName,
+    TResult? Function(CheckEmailValidationState value)? checkEmail,
+    TResult? Function(CheckAddressValidationState value)? checkAddress,
+    TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult? Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult? Function(SignUpLoadingState value)? signUpLoading,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult? Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult? Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
+  }) {
+    return verifyOTPError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CheckNameValidationState value)? checkName,
+    TResult Function(CheckEmailValidationState value)? checkEmail,
+    TResult Function(CheckAddressValidationState value)? checkAddress,
+    TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult Function(SignUpLoadingState value)? signUpLoading,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
+    required TResult orElse(),
+  }) {
+    if (verifyOTPError != null) {
+      return verifyOTPError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VerifyOTPErrorState implements SignupState {
+  const factory VerifyOTPErrorState({required final String errMsg}) =
+      _$VerifyOTPErrorStateImpl;
+
+  String get errMsg;
+  @JsonKey(ignore: true)
+  _$$VerifyOTPErrorStateImplCopyWith<_$VerifyOTPErrorStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$VerifyOTPSuccessStateImplCopyWith<$Res> {
+  factory _$$VerifyOTPSuccessStateImplCopyWith(
+          _$VerifyOTPSuccessStateImpl value,
+          $Res Function(_$VerifyOTPSuccessStateImpl) then) =
+      __$$VerifyOTPSuccessStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String successMsg});
+}
+
+/// @nodoc
+class __$$VerifyOTPSuccessStateImplCopyWithImpl<$Res>
+    extends _$SignupStateCopyWithImpl<$Res, _$VerifyOTPSuccessStateImpl>
+    implements _$$VerifyOTPSuccessStateImplCopyWith<$Res> {
+  __$$VerifyOTPSuccessStateImplCopyWithImpl(_$VerifyOTPSuccessStateImpl _value,
+      $Res Function(_$VerifyOTPSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? successMsg = null,
+  }) {
+    return _then(_$VerifyOTPSuccessStateImpl(
+      successMsg: null == successMsg
+          ? _value.successMsg
+          : successMsg // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$VerifyOTPSuccessStateImpl implements VerifyOTPSuccessState {
+  const _$VerifyOTPSuccessStateImpl({required this.successMsg});
+
+  @override
+  final String successMsg;
+
+  @override
+  String toString() {
+    return 'SignupState.verifyOTPSuccess(successMsg: $successMsg)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyOTPSuccessStateImpl &&
+            (identical(other.successMsg, successMsg) ||
+                other.successMsg == successMsg));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, successMsg);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VerifyOTPSuccessStateImplCopyWith<_$VerifyOTPSuccessStateImpl>
+      get copyWith => __$$VerifyOTPSuccessStateImplCopyWithImpl<
+          _$VerifyOTPSuccessStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String name, TextFieldValidation validation)
+        checkName,
+    required TResult Function(String email, TextFieldValidation validation)
+        checkEmail,
+    required TResult Function(String address, TextFieldValidation validation)
+        checkAddress,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkNewPassword,
+    required TResult Function(
+            String confirmPassword, TextFieldValidation validation)
+        checkConfirmPassword,
+    required TResult Function() signUpLoading,
+    required TResult Function(String errMsg) signUpError,
+    required TResult Function(String successMsg) signUpSuccess,
+    required TResult Function() verifyOTPLoading,
+    required TResult Function(String errMsg) verifyOTPError,
+    required TResult Function(String successMsg) verifyOTPSuccess,
+  }) {
+    return verifyOTPSuccess(successMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String name, TextFieldValidation validation)? checkName,
+    TResult? Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult? Function(String address, TextFieldValidation validation)?
+        checkAddress,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult? Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult? Function()? signUpLoading,
+    TResult? Function(String errMsg)? signUpError,
+    TResult? Function(String successMsg)? signUpSuccess,
+    TResult? Function()? verifyOTPLoading,
+    TResult? Function(String errMsg)? verifyOTPError,
+    TResult? Function(String successMsg)? verifyOTPSuccess,
+  }) {
+    return verifyOTPSuccess?.call(successMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String name, TextFieldValidation validation)? checkName,
+    TResult Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult Function(String address, TextFieldValidation validation)?
+        checkAddress,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult Function()? signUpLoading,
+    TResult Function(String errMsg)? signUpError,
+    TResult Function(String successMsg)? signUpSuccess,
+    TResult Function()? verifyOTPLoading,
+    TResult Function(String errMsg)? verifyOTPError,
+    TResult Function(String successMsg)? verifyOTPSuccess,
+    required TResult orElse(),
+  }) {
+    if (verifyOTPSuccess != null) {
+      return verifyOTPSuccess(successMsg);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CheckNameValidationState value) checkName,
+    required TResult Function(CheckEmailValidationState value) checkEmail,
+    required TResult Function(CheckAddressValidationState value) checkAddress,
+    required TResult Function(CheckNewPasswordValidationState value)
+        checkNewPassword,
+    required TResult Function(CheckConfirmPasswordValidationState value)
+        checkConfirmPassword,
+    required TResult Function(SignUpLoadingState value) signUpLoading,
+    required TResult Function(SignUpErrorState value) signUpError,
+    required TResult Function(SignUpSuccessState value) signUpSuccess,
+    required TResult Function(VerifyOTPLoadingState value) verifyOTPLoading,
+    required TResult Function(VerifyOTPErrorState value) verifyOTPError,
+    required TResult Function(VerifyOTPSuccessState value) verifyOTPSuccess,
+  }) {
+    return verifyOTPSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CheckNameValidationState value)? checkName,
+    TResult? Function(CheckEmailValidationState value)? checkEmail,
+    TResult? Function(CheckAddressValidationState value)? checkAddress,
+    TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult? Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult? Function(SignUpLoadingState value)? signUpLoading,
+    TResult? Function(SignUpErrorState value)? signUpError,
+    TResult? Function(SignUpSuccessState value)? signUpSuccess,
+    TResult? Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult? Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult? Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
+  }) {
+    return verifyOTPSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CheckNameValidationState value)? checkName,
+    TResult Function(CheckEmailValidationState value)? checkEmail,
+    TResult Function(CheckAddressValidationState value)? checkAddress,
+    TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult Function(SignUpLoadingState value)? signUpLoading,
+    TResult Function(SignUpErrorState value)? signUpError,
+    TResult Function(SignUpSuccessState value)? signUpSuccess,
+    TResult Function(VerifyOTPLoadingState value)? verifyOTPLoading,
+    TResult Function(VerifyOTPErrorState value)? verifyOTPError,
+    TResult Function(VerifyOTPSuccessState value)? verifyOTPSuccess,
+    required TResult orElse(),
+  }) {
+    if (verifyOTPSuccess != null) {
+      return verifyOTPSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VerifyOTPSuccessState implements SignupState {
+  const factory VerifyOTPSuccessState({required final String successMsg}) =
+      _$VerifyOTPSuccessStateImpl;
+
+  String get successMsg;
+  @JsonKey(ignore: true)
+  _$$VerifyOTPSuccessStateImplCopyWith<_$VerifyOTPSuccessStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

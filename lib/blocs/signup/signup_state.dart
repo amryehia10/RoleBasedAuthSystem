@@ -27,4 +27,20 @@ class SignupState with _$SignupState {
     required String confirmPassword,
     required TextFieldValidation validation,
   }) = CheckConfirmPasswordValidationState;
+
+  const factory SignupState.signUpLoading() = SignUpLoadingState;
+  const factory SignupState.signUpError({
+    required String errMsg,
+  }) = SignUpErrorState;
+  const factory SignupState.signUpSuccess({
+    required String successMsg,
+  }) = SignUpSuccessState;
+
+  const factory SignupState.verifyOTPLoading() = VerifyOTPLoadingState;
+  const factory SignupState.verifyOTPError({
+    required String errMsg,
+  }) = VerifyOTPErrorState;
+  const factory SignupState.verifyOTPSuccess({
+    required String successMsg,
+  }) = VerifyOTPSuccessState;
 }

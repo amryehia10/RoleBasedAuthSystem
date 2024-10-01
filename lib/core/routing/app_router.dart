@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:role_based_auth_system/blocs/signup/signup_cubit.dart';
 import 'package:role_based_auth_system/core/routing/routes.dart';
+import 'package:role_based_auth_system/presentation/auth/login/create_new_forget_password_screen.dart';
+import 'package:role_based_auth_system/presentation/auth/login/forget_password_otp.dart';
+import 'package:role_based_auth_system/presentation/auth/login/forget_password_screen.dart';
 import 'package:role_based_auth_system/presentation/auth/signup/create_new_password_screen.dart';
 import 'package:role_based_auth_system/presentation/auth/signup/otp_screen.dart';
 import 'package:role_based_auth_system/presentation/auth/signup/signup_screen.dart';
@@ -32,6 +35,26 @@ class AppRouter {
       return BlocProvider.value(
         value: (arguments as SignupCubit),
         child: const CreateNewPassword(),
+      );
+    },
+    Routes.forgetPasswordScreen: (context, arguments) {
+      return BlocProvider.value(
+        value: (arguments as LoginCubit),
+        child: const ForgetPasswordScreen(),
+      );
+    },
+
+    Routes.otpForgetScreen: (context, arguments) {
+      return BlocProvider.value(
+        value: (arguments as LoginCubit),
+        child: const ForgetPasswordOtp(),
+      );
+    },
+
+    Routes.createNewForgetPasswordScreen: (context, arguments) {
+      return BlocProvider.value(
+        value: (arguments as LoginCubit),
+        child: const CreateNewForgetPassword(),
       );
     },
   };

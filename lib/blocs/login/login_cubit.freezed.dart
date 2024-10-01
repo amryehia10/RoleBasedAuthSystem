@@ -23,6 +23,11 @@ mixin _$LoginState {
         checkEmail,
     required TResult Function(String password, TextFieldValidation validation)
         checkLoginPassword,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkNewPassword,
+    required TResult Function(
+            String confirmPassword, TextFieldValidation validation)
+        checkConfirmPassword,
     required TResult Function() loginLoading,
     required TResult Function() loginSuccess,
     required TResult Function(String errMsg) loginError,
@@ -34,6 +39,10 @@ mixin _$LoginState {
     TResult? Function(String email, TextFieldValidation validation)? checkEmail,
     TResult? Function(String password, TextFieldValidation validation)?
         checkLoginPassword,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult? Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
     TResult? Function()? loginLoading,
     TResult? Function()? loginSuccess,
     TResult? Function(String errMsg)? loginError,
@@ -45,6 +54,10 @@ mixin _$LoginState {
     TResult Function(String email, TextFieldValidation validation)? checkEmail,
     TResult Function(String password, TextFieldValidation validation)?
         checkLoginPassword,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
     TResult Function()? loginLoading,
     TResult Function()? loginSuccess,
     TResult Function(String errMsg)? loginError,
@@ -57,6 +70,10 @@ mixin _$LoginState {
     required TResult Function(CheckLoginEmailValidationState value) checkEmail,
     required TResult Function(CheckLoginPasswordValidationState value)
         checkLoginPassword,
+    required TResult Function(CheckNewPasswordValidationState value)
+        checkNewPassword,
+    required TResult Function(CheckConfirmPasswordValidationState value)
+        checkConfirmPassword,
     required TResult Function(LoginLoadingState value) loginLoading,
     required TResult Function(LoginSuccessState value) loginSuccess,
     required TResult Function(LoginErrorState value) loginError,
@@ -68,6 +85,9 @@ mixin _$LoginState {
     TResult? Function(CheckLoginEmailValidationState value)? checkEmail,
     TResult? Function(CheckLoginPasswordValidationState value)?
         checkLoginPassword,
+    TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult? Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
     TResult? Function(LoginLoadingState value)? loginLoading,
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(LoginErrorState value)? loginError,
@@ -79,6 +99,9 @@ mixin _$LoginState {
     TResult Function(CheckLoginEmailValidationState value)? checkEmail,
     TResult Function(CheckLoginPasswordValidationState value)?
         checkLoginPassword,
+    TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
     TResult Function(LoginLoadingState value)? loginLoading,
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(LoginErrorState value)? loginError,
@@ -148,6 +171,11 @@ class _$InitialImpl implements _Initial {
         checkEmail,
     required TResult Function(String password, TextFieldValidation validation)
         checkLoginPassword,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkNewPassword,
+    required TResult Function(
+            String confirmPassword, TextFieldValidation validation)
+        checkConfirmPassword,
     required TResult Function() loginLoading,
     required TResult Function() loginSuccess,
     required TResult Function(String errMsg) loginError,
@@ -162,6 +190,10 @@ class _$InitialImpl implements _Initial {
     TResult? Function(String email, TextFieldValidation validation)? checkEmail,
     TResult? Function(String password, TextFieldValidation validation)?
         checkLoginPassword,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult? Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
     TResult? Function()? loginLoading,
     TResult? Function()? loginSuccess,
     TResult? Function(String errMsg)? loginError,
@@ -176,6 +208,10 @@ class _$InitialImpl implements _Initial {
     TResult Function(String email, TextFieldValidation validation)? checkEmail,
     TResult Function(String password, TextFieldValidation validation)?
         checkLoginPassword,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
     TResult Function()? loginLoading,
     TResult Function()? loginSuccess,
     TResult Function(String errMsg)? loginError,
@@ -194,6 +230,10 @@ class _$InitialImpl implements _Initial {
     required TResult Function(CheckLoginEmailValidationState value) checkEmail,
     required TResult Function(CheckLoginPasswordValidationState value)
         checkLoginPassword,
+    required TResult Function(CheckNewPasswordValidationState value)
+        checkNewPassword,
+    required TResult Function(CheckConfirmPasswordValidationState value)
+        checkConfirmPassword,
     required TResult Function(LoginLoadingState value) loginLoading,
     required TResult Function(LoginSuccessState value) loginSuccess,
     required TResult Function(LoginErrorState value) loginError,
@@ -208,6 +248,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(CheckLoginEmailValidationState value)? checkEmail,
     TResult? Function(CheckLoginPasswordValidationState value)?
         checkLoginPassword,
+    TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult? Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
     TResult? Function(LoginLoadingState value)? loginLoading,
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(LoginErrorState value)? loginError,
@@ -222,6 +265,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(CheckLoginEmailValidationState value)? checkEmail,
     TResult Function(CheckLoginPasswordValidationState value)?
         checkLoginPassword,
+    TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
     TResult Function(LoginLoadingState value)? loginLoading,
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(LoginErrorState value)? loginError,
@@ -322,6 +368,11 @@ class _$CheckLoginEmailValidationStateImpl
         checkEmail,
     required TResult Function(String password, TextFieldValidation validation)
         checkLoginPassword,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkNewPassword,
+    required TResult Function(
+            String confirmPassword, TextFieldValidation validation)
+        checkConfirmPassword,
     required TResult Function() loginLoading,
     required TResult Function() loginSuccess,
     required TResult Function(String errMsg) loginError,
@@ -336,6 +387,10 @@ class _$CheckLoginEmailValidationStateImpl
     TResult? Function(String email, TextFieldValidation validation)? checkEmail,
     TResult? Function(String password, TextFieldValidation validation)?
         checkLoginPassword,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult? Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
     TResult? Function()? loginLoading,
     TResult? Function()? loginSuccess,
     TResult? Function(String errMsg)? loginError,
@@ -350,6 +405,10 @@ class _$CheckLoginEmailValidationStateImpl
     TResult Function(String email, TextFieldValidation validation)? checkEmail,
     TResult Function(String password, TextFieldValidation validation)?
         checkLoginPassword,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
     TResult Function()? loginLoading,
     TResult Function()? loginSuccess,
     TResult Function(String errMsg)? loginError,
@@ -368,6 +427,10 @@ class _$CheckLoginEmailValidationStateImpl
     required TResult Function(CheckLoginEmailValidationState value) checkEmail,
     required TResult Function(CheckLoginPasswordValidationState value)
         checkLoginPassword,
+    required TResult Function(CheckNewPasswordValidationState value)
+        checkNewPassword,
+    required TResult Function(CheckConfirmPasswordValidationState value)
+        checkConfirmPassword,
     required TResult Function(LoginLoadingState value) loginLoading,
     required TResult Function(LoginSuccessState value) loginSuccess,
     required TResult Function(LoginErrorState value) loginError,
@@ -382,6 +445,9 @@ class _$CheckLoginEmailValidationStateImpl
     TResult? Function(CheckLoginEmailValidationState value)? checkEmail,
     TResult? Function(CheckLoginPasswordValidationState value)?
         checkLoginPassword,
+    TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult? Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
     TResult? Function(LoginLoadingState value)? loginLoading,
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(LoginErrorState value)? loginError,
@@ -396,6 +462,9 @@ class _$CheckLoginEmailValidationStateImpl
     TResult Function(CheckLoginEmailValidationState value)? checkEmail,
     TResult Function(CheckLoginPasswordValidationState value)?
         checkLoginPassword,
+    TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
     TResult Function(LoginLoadingState value)? loginLoading,
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(LoginErrorState value)? loginError,
@@ -508,6 +577,11 @@ class _$CheckLoginPasswordValidationStateImpl
         checkEmail,
     required TResult Function(String password, TextFieldValidation validation)
         checkLoginPassword,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkNewPassword,
+    required TResult Function(
+            String confirmPassword, TextFieldValidation validation)
+        checkConfirmPassword,
     required TResult Function() loginLoading,
     required TResult Function() loginSuccess,
     required TResult Function(String errMsg) loginError,
@@ -522,6 +596,10 @@ class _$CheckLoginPasswordValidationStateImpl
     TResult? Function(String email, TextFieldValidation validation)? checkEmail,
     TResult? Function(String password, TextFieldValidation validation)?
         checkLoginPassword,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult? Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
     TResult? Function()? loginLoading,
     TResult? Function()? loginSuccess,
     TResult? Function(String errMsg)? loginError,
@@ -536,6 +614,10 @@ class _$CheckLoginPasswordValidationStateImpl
     TResult Function(String email, TextFieldValidation validation)? checkEmail,
     TResult Function(String password, TextFieldValidation validation)?
         checkLoginPassword,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
     TResult Function()? loginLoading,
     TResult Function()? loginSuccess,
     TResult Function(String errMsg)? loginError,
@@ -554,6 +636,10 @@ class _$CheckLoginPasswordValidationStateImpl
     required TResult Function(CheckLoginEmailValidationState value) checkEmail,
     required TResult Function(CheckLoginPasswordValidationState value)
         checkLoginPassword,
+    required TResult Function(CheckNewPasswordValidationState value)
+        checkNewPassword,
+    required TResult Function(CheckConfirmPasswordValidationState value)
+        checkConfirmPassword,
     required TResult Function(LoginLoadingState value) loginLoading,
     required TResult Function(LoginSuccessState value) loginSuccess,
     required TResult Function(LoginErrorState value) loginError,
@@ -568,6 +654,9 @@ class _$CheckLoginPasswordValidationStateImpl
     TResult? Function(CheckLoginEmailValidationState value)? checkEmail,
     TResult? Function(CheckLoginPasswordValidationState value)?
         checkLoginPassword,
+    TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult? Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
     TResult? Function(LoginLoadingState value)? loginLoading,
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(LoginErrorState value)? loginError,
@@ -582,6 +671,9 @@ class _$CheckLoginPasswordValidationStateImpl
     TResult Function(CheckLoginEmailValidationState value)? checkEmail,
     TResult Function(CheckLoginPasswordValidationState value)?
         checkLoginPassword,
+    TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
     TResult Function(LoginLoadingState value)? loginLoading,
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(LoginErrorState value)? loginError,
@@ -605,6 +697,424 @@ abstract class CheckLoginPasswordValidationState implements LoginState {
   @JsonKey(ignore: true)
   _$$CheckLoginPasswordValidationStateImplCopyWith<
           _$CheckLoginPasswordValidationStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckNewPasswordValidationStateImplCopyWith<$Res> {
+  factory _$$CheckNewPasswordValidationStateImplCopyWith(
+          _$CheckNewPasswordValidationStateImpl value,
+          $Res Function(_$CheckNewPasswordValidationStateImpl) then) =
+      __$$CheckNewPasswordValidationStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String password, TextFieldValidation validation});
+}
+
+/// @nodoc
+class __$$CheckNewPasswordValidationStateImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res,
+        _$CheckNewPasswordValidationStateImpl>
+    implements _$$CheckNewPasswordValidationStateImplCopyWith<$Res> {
+  __$$CheckNewPasswordValidationStateImplCopyWithImpl(
+      _$CheckNewPasswordValidationStateImpl _value,
+      $Res Function(_$CheckNewPasswordValidationStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? password = null,
+    Object? validation = null,
+  }) {
+    return _then(_$CheckNewPasswordValidationStateImpl(
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      validation: null == validation
+          ? _value.validation
+          : validation // ignore: cast_nullable_to_non_nullable
+              as TextFieldValidation,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CheckNewPasswordValidationStateImpl
+    implements CheckNewPasswordValidationState {
+  const _$CheckNewPasswordValidationStateImpl(
+      {required this.password, required this.validation});
+
+  @override
+  final String password;
+  @override
+  final TextFieldValidation validation;
+
+  @override
+  String toString() {
+    return 'LoginState.checkNewPassword(password: $password, validation: $validation)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckNewPasswordValidationStateImpl &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.validation, validation) ||
+                other.validation == validation));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, password, validation);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckNewPasswordValidationStateImplCopyWith<
+          _$CheckNewPasswordValidationStateImpl>
+      get copyWith => __$$CheckNewPasswordValidationStateImplCopyWithImpl<
+          _$CheckNewPasswordValidationStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String email, TextFieldValidation validation)
+        checkEmail,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkLoginPassword,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkNewPassword,
+    required TResult Function(
+            String confirmPassword, TextFieldValidation validation)
+        checkConfirmPassword,
+    required TResult Function() loginLoading,
+    required TResult Function() loginSuccess,
+    required TResult Function(String errMsg) loginError,
+  }) {
+    return checkNewPassword(password, validation);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkLoginPassword,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult? Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult? Function()? loginLoading,
+    TResult? Function()? loginSuccess,
+    TResult? Function(String errMsg)? loginError,
+  }) {
+    return checkNewPassword?.call(password, validation);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkLoginPassword,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult Function()? loginLoading,
+    TResult Function()? loginSuccess,
+    TResult Function(String errMsg)? loginError,
+    required TResult orElse(),
+  }) {
+    if (checkNewPassword != null) {
+      return checkNewPassword(password, validation);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CheckLoginEmailValidationState value) checkEmail,
+    required TResult Function(CheckLoginPasswordValidationState value)
+        checkLoginPassword,
+    required TResult Function(CheckNewPasswordValidationState value)
+        checkNewPassword,
+    required TResult Function(CheckConfirmPasswordValidationState value)
+        checkConfirmPassword,
+    required TResult Function(LoginLoadingState value) loginLoading,
+    required TResult Function(LoginSuccessState value) loginSuccess,
+    required TResult Function(LoginErrorState value) loginError,
+  }) {
+    return checkNewPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CheckLoginEmailValidationState value)? checkEmail,
+    TResult? Function(CheckLoginPasswordValidationState value)?
+        checkLoginPassword,
+    TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult? Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult? Function(LoginLoadingState value)? loginLoading,
+    TResult? Function(LoginSuccessState value)? loginSuccess,
+    TResult? Function(LoginErrorState value)? loginError,
+  }) {
+    return checkNewPassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CheckLoginEmailValidationState value)? checkEmail,
+    TResult Function(CheckLoginPasswordValidationState value)?
+        checkLoginPassword,
+    TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult Function(LoginLoadingState value)? loginLoading,
+    TResult Function(LoginSuccessState value)? loginSuccess,
+    TResult Function(LoginErrorState value)? loginError,
+    required TResult orElse(),
+  }) {
+    if (checkNewPassword != null) {
+      return checkNewPassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckNewPasswordValidationState implements LoginState {
+  const factory CheckNewPasswordValidationState(
+          {required final String password,
+          required final TextFieldValidation validation}) =
+      _$CheckNewPasswordValidationStateImpl;
+
+  String get password;
+  TextFieldValidation get validation;
+  @JsonKey(ignore: true)
+  _$$CheckNewPasswordValidationStateImplCopyWith<
+          _$CheckNewPasswordValidationStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckConfirmPasswordValidationStateImplCopyWith<$Res> {
+  factory _$$CheckConfirmPasswordValidationStateImplCopyWith(
+          _$CheckConfirmPasswordValidationStateImpl value,
+          $Res Function(_$CheckConfirmPasswordValidationStateImpl) then) =
+      __$$CheckConfirmPasswordValidationStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String confirmPassword, TextFieldValidation validation});
+}
+
+/// @nodoc
+class __$$CheckConfirmPasswordValidationStateImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res,
+        _$CheckConfirmPasswordValidationStateImpl>
+    implements _$$CheckConfirmPasswordValidationStateImplCopyWith<$Res> {
+  __$$CheckConfirmPasswordValidationStateImplCopyWithImpl(
+      _$CheckConfirmPasswordValidationStateImpl _value,
+      $Res Function(_$CheckConfirmPasswordValidationStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? confirmPassword = null,
+    Object? validation = null,
+  }) {
+    return _then(_$CheckConfirmPasswordValidationStateImpl(
+      confirmPassword: null == confirmPassword
+          ? _value.confirmPassword
+          : confirmPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+      validation: null == validation
+          ? _value.validation
+          : validation // ignore: cast_nullable_to_non_nullable
+              as TextFieldValidation,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CheckConfirmPasswordValidationStateImpl
+    implements CheckConfirmPasswordValidationState {
+  const _$CheckConfirmPasswordValidationStateImpl(
+      {required this.confirmPassword, required this.validation});
+
+  @override
+  final String confirmPassword;
+  @override
+  final TextFieldValidation validation;
+
+  @override
+  String toString() {
+    return 'LoginState.checkConfirmPassword(confirmPassword: $confirmPassword, validation: $validation)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckConfirmPasswordValidationStateImpl &&
+            (identical(other.confirmPassword, confirmPassword) ||
+                other.confirmPassword == confirmPassword) &&
+            (identical(other.validation, validation) ||
+                other.validation == validation));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, confirmPassword, validation);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckConfirmPasswordValidationStateImplCopyWith<
+          _$CheckConfirmPasswordValidationStateImpl>
+      get copyWith => __$$CheckConfirmPasswordValidationStateImplCopyWithImpl<
+          _$CheckConfirmPasswordValidationStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String email, TextFieldValidation validation)
+        checkEmail,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkLoginPassword,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkNewPassword,
+    required TResult Function(
+            String confirmPassword, TextFieldValidation validation)
+        checkConfirmPassword,
+    required TResult Function() loginLoading,
+    required TResult Function() loginSuccess,
+    required TResult Function(String errMsg) loginError,
+  }) {
+    return checkConfirmPassword(confirmPassword, validation);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkLoginPassword,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult? Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult? Function()? loginLoading,
+    TResult? Function()? loginSuccess,
+    TResult? Function(String errMsg)? loginError,
+  }) {
+    return checkConfirmPassword?.call(confirmPassword, validation);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String email, TextFieldValidation validation)? checkEmail,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkLoginPassword,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
+    TResult Function()? loginLoading,
+    TResult Function()? loginSuccess,
+    TResult Function(String errMsg)? loginError,
+    required TResult orElse(),
+  }) {
+    if (checkConfirmPassword != null) {
+      return checkConfirmPassword(confirmPassword, validation);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CheckLoginEmailValidationState value) checkEmail,
+    required TResult Function(CheckLoginPasswordValidationState value)
+        checkLoginPassword,
+    required TResult Function(CheckNewPasswordValidationState value)
+        checkNewPassword,
+    required TResult Function(CheckConfirmPasswordValidationState value)
+        checkConfirmPassword,
+    required TResult Function(LoginLoadingState value) loginLoading,
+    required TResult Function(LoginSuccessState value) loginSuccess,
+    required TResult Function(LoginErrorState value) loginError,
+  }) {
+    return checkConfirmPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CheckLoginEmailValidationState value)? checkEmail,
+    TResult? Function(CheckLoginPasswordValidationState value)?
+        checkLoginPassword,
+    TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult? Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult? Function(LoginLoadingState value)? loginLoading,
+    TResult? Function(LoginSuccessState value)? loginSuccess,
+    TResult? Function(LoginErrorState value)? loginError,
+  }) {
+    return checkConfirmPassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CheckLoginEmailValidationState value)? checkEmail,
+    TResult Function(CheckLoginPasswordValidationState value)?
+        checkLoginPassword,
+    TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
+    TResult Function(LoginLoadingState value)? loginLoading,
+    TResult Function(LoginSuccessState value)? loginSuccess,
+    TResult Function(LoginErrorState value)? loginError,
+    required TResult orElse(),
+  }) {
+    if (checkConfirmPassword != null) {
+      return checkConfirmPassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckConfirmPasswordValidationState implements LoginState {
+  const factory CheckConfirmPasswordValidationState(
+          {required final String confirmPassword,
+          required final TextFieldValidation validation}) =
+      _$CheckConfirmPasswordValidationStateImpl;
+
+  String get confirmPassword;
+  TextFieldValidation get validation;
+  @JsonKey(ignore: true)
+  _$$CheckConfirmPasswordValidationStateImplCopyWith<
+          _$CheckConfirmPasswordValidationStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -651,6 +1161,11 @@ class _$LoginLoadingStateImpl implements LoginLoadingState {
         checkEmail,
     required TResult Function(String password, TextFieldValidation validation)
         checkLoginPassword,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkNewPassword,
+    required TResult Function(
+            String confirmPassword, TextFieldValidation validation)
+        checkConfirmPassword,
     required TResult Function() loginLoading,
     required TResult Function() loginSuccess,
     required TResult Function(String errMsg) loginError,
@@ -665,6 +1180,10 @@ class _$LoginLoadingStateImpl implements LoginLoadingState {
     TResult? Function(String email, TextFieldValidation validation)? checkEmail,
     TResult? Function(String password, TextFieldValidation validation)?
         checkLoginPassword,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult? Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
     TResult? Function()? loginLoading,
     TResult? Function()? loginSuccess,
     TResult? Function(String errMsg)? loginError,
@@ -679,6 +1198,10 @@ class _$LoginLoadingStateImpl implements LoginLoadingState {
     TResult Function(String email, TextFieldValidation validation)? checkEmail,
     TResult Function(String password, TextFieldValidation validation)?
         checkLoginPassword,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
     TResult Function()? loginLoading,
     TResult Function()? loginSuccess,
     TResult Function(String errMsg)? loginError,
@@ -697,6 +1220,10 @@ class _$LoginLoadingStateImpl implements LoginLoadingState {
     required TResult Function(CheckLoginEmailValidationState value) checkEmail,
     required TResult Function(CheckLoginPasswordValidationState value)
         checkLoginPassword,
+    required TResult Function(CheckNewPasswordValidationState value)
+        checkNewPassword,
+    required TResult Function(CheckConfirmPasswordValidationState value)
+        checkConfirmPassword,
     required TResult Function(LoginLoadingState value) loginLoading,
     required TResult Function(LoginSuccessState value) loginSuccess,
     required TResult Function(LoginErrorState value) loginError,
@@ -711,6 +1238,9 @@ class _$LoginLoadingStateImpl implements LoginLoadingState {
     TResult? Function(CheckLoginEmailValidationState value)? checkEmail,
     TResult? Function(CheckLoginPasswordValidationState value)?
         checkLoginPassword,
+    TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult? Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
     TResult? Function(LoginLoadingState value)? loginLoading,
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(LoginErrorState value)? loginError,
@@ -725,6 +1255,9 @@ class _$LoginLoadingStateImpl implements LoginLoadingState {
     TResult Function(CheckLoginEmailValidationState value)? checkEmail,
     TResult Function(CheckLoginPasswordValidationState value)?
         checkLoginPassword,
+    TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
     TResult Function(LoginLoadingState value)? loginLoading,
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(LoginErrorState value)? loginError,
@@ -784,6 +1317,11 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
         checkEmail,
     required TResult Function(String password, TextFieldValidation validation)
         checkLoginPassword,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkNewPassword,
+    required TResult Function(
+            String confirmPassword, TextFieldValidation validation)
+        checkConfirmPassword,
     required TResult Function() loginLoading,
     required TResult Function() loginSuccess,
     required TResult Function(String errMsg) loginError,
@@ -798,6 +1336,10 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult? Function(String email, TextFieldValidation validation)? checkEmail,
     TResult? Function(String password, TextFieldValidation validation)?
         checkLoginPassword,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult? Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
     TResult? Function()? loginLoading,
     TResult? Function()? loginSuccess,
     TResult? Function(String errMsg)? loginError,
@@ -812,6 +1354,10 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult Function(String email, TextFieldValidation validation)? checkEmail,
     TResult Function(String password, TextFieldValidation validation)?
         checkLoginPassword,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
     TResult Function()? loginLoading,
     TResult Function()? loginSuccess,
     TResult Function(String errMsg)? loginError,
@@ -830,6 +1376,10 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     required TResult Function(CheckLoginEmailValidationState value) checkEmail,
     required TResult Function(CheckLoginPasswordValidationState value)
         checkLoginPassword,
+    required TResult Function(CheckNewPasswordValidationState value)
+        checkNewPassword,
+    required TResult Function(CheckConfirmPasswordValidationState value)
+        checkConfirmPassword,
     required TResult Function(LoginLoadingState value) loginLoading,
     required TResult Function(LoginSuccessState value) loginSuccess,
     required TResult Function(LoginErrorState value) loginError,
@@ -844,6 +1394,9 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult? Function(CheckLoginEmailValidationState value)? checkEmail,
     TResult? Function(CheckLoginPasswordValidationState value)?
         checkLoginPassword,
+    TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult? Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
     TResult? Function(LoginLoadingState value)? loginLoading,
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(LoginErrorState value)? loginError,
@@ -858,6 +1411,9 @@ class _$LoginSuccessStateImpl implements LoginSuccessState {
     TResult Function(CheckLoginEmailValidationState value)? checkEmail,
     TResult Function(CheckLoginPasswordValidationState value)?
         checkLoginPassword,
+    TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
     TResult Function(LoginLoadingState value)? loginLoading,
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(LoginErrorState value)? loginError,
@@ -944,6 +1500,11 @@ class _$LoginErrorStateImpl implements LoginErrorState {
         checkEmail,
     required TResult Function(String password, TextFieldValidation validation)
         checkLoginPassword,
+    required TResult Function(String password, TextFieldValidation validation)
+        checkNewPassword,
+    required TResult Function(
+            String confirmPassword, TextFieldValidation validation)
+        checkConfirmPassword,
     required TResult Function() loginLoading,
     required TResult Function() loginSuccess,
     required TResult Function(String errMsg) loginError,
@@ -958,6 +1519,10 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     TResult? Function(String email, TextFieldValidation validation)? checkEmail,
     TResult? Function(String password, TextFieldValidation validation)?
         checkLoginPassword,
+    TResult? Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult? Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
     TResult? Function()? loginLoading,
     TResult? Function()? loginSuccess,
     TResult? Function(String errMsg)? loginError,
@@ -972,6 +1537,10 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     TResult Function(String email, TextFieldValidation validation)? checkEmail,
     TResult Function(String password, TextFieldValidation validation)?
         checkLoginPassword,
+    TResult Function(String password, TextFieldValidation validation)?
+        checkNewPassword,
+    TResult Function(String confirmPassword, TextFieldValidation validation)?
+        checkConfirmPassword,
     TResult Function()? loginLoading,
     TResult Function()? loginSuccess,
     TResult Function(String errMsg)? loginError,
@@ -990,6 +1559,10 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     required TResult Function(CheckLoginEmailValidationState value) checkEmail,
     required TResult Function(CheckLoginPasswordValidationState value)
         checkLoginPassword,
+    required TResult Function(CheckNewPasswordValidationState value)
+        checkNewPassword,
+    required TResult Function(CheckConfirmPasswordValidationState value)
+        checkConfirmPassword,
     required TResult Function(LoginLoadingState value) loginLoading,
     required TResult Function(LoginSuccessState value) loginSuccess,
     required TResult Function(LoginErrorState value) loginError,
@@ -1004,6 +1577,9 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     TResult? Function(CheckLoginEmailValidationState value)? checkEmail,
     TResult? Function(CheckLoginPasswordValidationState value)?
         checkLoginPassword,
+    TResult? Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult? Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
     TResult? Function(LoginLoadingState value)? loginLoading,
     TResult? Function(LoginSuccessState value)? loginSuccess,
     TResult? Function(LoginErrorState value)? loginError,
@@ -1018,6 +1594,9 @@ class _$LoginErrorStateImpl implements LoginErrorState {
     TResult Function(CheckLoginEmailValidationState value)? checkEmail,
     TResult Function(CheckLoginPasswordValidationState value)?
         checkLoginPassword,
+    TResult Function(CheckNewPasswordValidationState value)? checkNewPassword,
+    TResult Function(CheckConfirmPasswordValidationState value)?
+        checkConfirmPassword,
     TResult Function(LoginLoadingState value)? loginLoading,
     TResult Function(LoginSuccessState value)? loginSuccess,
     TResult Function(LoginErrorState value)? loginError,

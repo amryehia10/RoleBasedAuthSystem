@@ -6,4 +6,7 @@ class Routes {
   static const String forgetPasswordScreen = '/forgetPasswordScreen';
   static const String otpScreen = '/otpScreen';
   static const String createNewPasswordScreen = '/createNewPasswordScreen';
+  static const String otpForgetScreen = '/otpForgetScreen';
+  static const String createNewForgetPasswordScreen = '/createNewForgetPasswordScreen';
+  
 }

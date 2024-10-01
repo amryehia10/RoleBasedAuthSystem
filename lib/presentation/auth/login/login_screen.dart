@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:role_based_auth_system/core/widgets/auth_rich_text.dart';
-import 'package:role_based_auth_system/presentation/auth/login/components/forget_password_button.dart';
-import 'package:role_based_auth_system/presentation/auth/login/components/login_email.dart';
-import 'package:role_based_auth_system/presentation/auth/login/components/login_password.dart';
+import 'package:role_based_auth_system/presentation/auth/login/widgets/forget_password_button.dart';
+import 'package:role_based_auth_system/presentation/auth/login/widgets/login_email.dart';
+import 'package:role_based_auth_system/presentation/auth/login/widgets/login_password.dart';
 
 import '../../../blocs/login/login_cubit.dart';
 import '../../../core/helpers/constants.dart';
@@ -27,11 +27,10 @@ class LoginScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                DefaultHeader(
+                const DefaultHeader(
                   header: "Login",
+                  isShowPrefixIcon: false,
                   textAlignment: AlignmentDirectional.center,
-                  onBackPressed: () =>  Navigator.of(context).pushReplacementNamed(Routes.layoutScreen,)
-,
                 ),
                 const SizedBox(
                   height: 48,
@@ -85,6 +84,7 @@ class LoginScreen extends StatelessWidget {
                       loading: state is LoginLoadingState,
                       function: () {
                         blocRead.onLoginButtonClicked();
+                        Navigator.of(context).pushReplacementNamed(Routes.layoutScreen);
                       },
                       text: "Login",
                       marginTop: 24,

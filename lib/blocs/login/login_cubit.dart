@@ -9,7 +9,7 @@ import '../../core/services/networking/repositories/auth_repository.dart';
 part 'login_state.dart';
 part 'login_cubit.freezed.dart';
 
-class LoginCubit extends Cubit<LoginState>{
+class LoginCubit extends Cubit<LoginState> {
   final AuthRepository _authRepository;
   LoginCubit(this._authRepository) : super(const LoginState.initial());
 
@@ -19,9 +19,46 @@ class LoginCubit extends Cubit<LoginState>{
   TextEditingController passwordController = TextEditingController();
   TextFieldValidation passwordValidation = TextFieldValidation.normal;
 
+  TextEditingController newPasswordController = TextEditingController();
+  TextFieldValidation newPasswordValidation = TextFieldValidation.normal;
 
+  TextEditingController confirmPasswordController = TextEditingController();
+  TextFieldValidation confirmPasswordValidation = TextFieldValidation.normal;
 
-   void checkEmailValidationState() {
+  List<TextEditingController> codeControllers = [
+    TextEditingController(),
+    TextEditingController(),
+    TextEditingController(),
+    TextEditingController(),
+    TextEditingController(),
+    TextEditingController(),
+  ];
+
+  List<FocusNode> codeFocusNode = [
+    FocusNode(),
+    FocusNode(),
+    FocusNode(),
+    FocusNode(),
+    FocusNode(),
+    FocusNode(),
+  ];
+
+  void clearCodeControllers() {
+    for (var controller in codeControllers) {
+      controller.clear();
+    }
+  }
+
+  bool _areAllControllersFilled(List<TextEditingController> controllers) {
+    for (var controller in controllers) {
+      if (controller.text.isEmpty) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  void checkEmailValidationState() {
     if ((emailController.text.isNotEmpty ||
             emailValidation == TextFieldValidation.notValid) &&
         AppRegex.isEmailValid(emailController.text)) {
@@ -56,8 +93,6 @@ class LoginCubit extends Cubit<LoginState>{
       ),
     );
   }
-
-
 
   void onLoginButtonClicked() async {
     checkEmailValidationState();
@@ -95,5 +130,43 @@ class LoginCubit extends Cubit<LoginState>{
     //     emit(LoginState.loginError(e.toString()));
     //   }
     // }
+  }
+
+    void checkNewPasswordValidation() {
+    if (newPasswordController.text.isNotEmpty &&
+        newPasswordController.text.length >= 6 &&
+        AppRegex.hasSpecialCharacter(newPasswordController.text)) {
+      newPasswordValidation = TextFieldValidation.valid;
+    } else {
+      newPasswordValidation = TextFieldValidation.notValid;
+    }
+    emit(
+      LoginState.checkNewPassword(
+        password: newPasswordController.text,
+        validation: newPasswordValidation,
+      ),
+    );
+  }
+
+  
+    void checkConfirmPasswordValidation() {
+    if (confirmPasswordController.text.isNotEmpty &&
+        confirmPasswordController.text == newPasswordController.text) {
+      confirmPasswordValidation = TextFieldValidation.valid;
+      emit(
+        LoginState.checkConfirmPassword(
+          confirmPassword: confirmPasswordController.text,
+          validation: confirmPasswordValidation,
+        ),
+      );
+    } else {
+      confirmPasswordValidation = TextFieldValidation.notValid;
+      emit(
+        LoginState.checkConfirmPassword(
+          confirmPassword: confirmPasswordController.text,
+          validation: confirmPasswordValidation,
+        ),
+      );
+    }
   }
 }

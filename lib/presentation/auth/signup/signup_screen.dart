@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:role_based_auth_system/core/widgets/default_buttons.dart';
+import 'package:role_based_auth_system/core/widgets/snackbar.dart';
 import 'package:role_based_auth_system/presentation/auth/signup/widgets/signup_address_field.dart';
 import 'package:role_based_auth_system/presentation/auth/signup/widgets/signup_email_field.dart';
 import 'package:role_based_auth_system/presentation/auth/signup/widgets/signup_name_field.dart';
@@ -56,18 +57,28 @@ class SignupScreen extends StatelessWidget {
                       height: 12,
                     ),
                     BlocConsumer<SignupCubit, SignupState>(
+                      listenWhen: (previous, current) => current is SignUpSuccessState ||
+                                                         current is SignUpErrorState,
                       listener: (context, state) {
-                        
+                        if(state is SignUpErrorState) {
+                          defaultErrorSnackBar(context: context, message: state.errMsg);
+                        } else if(state is SignUpSuccessState) {
+                          Navigator.of(context).pushNamed(Routes.otpScreen, arguments: context.read<SignupCubit>());
+                        }
                       },
+                      buildWhen: (previous, current) => current is SignUpSuccessState ||
+                                                        current is SignUpErrorState ||
+                                                        current is SignUpLoadingState,
                       builder: (context, state) {
                         return DefaultButton(
+                          loading: state is SignUpLoadingState,
                           marginRight: 16,
                           marginLeft: 16,
                           marginTop: 24,
                           marginBottom: 24,
                           text: "Submit",
                           function: () {
-                            Navigator.of(context).pushNamed(Routes.otpScreen, arguments: context.read<SignupCubit>());
+                            blocRead.signUp();
                           },
                         );
                       },

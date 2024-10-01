@@ -86,12 +86,7 @@ class DioHelper {
         queryParameters: query,
         data: formData ?? body,
       );
-
-      if (response.statusCode == 200 || response.statusCode == 201) {
-        return response;
-      } else {
-        throw Exception(response.data['message']);
-      }
+      return response;
     } on DioException catch (e) {
       if (e is SocketException ||
           e.type == DioExceptionType.unknown ||
