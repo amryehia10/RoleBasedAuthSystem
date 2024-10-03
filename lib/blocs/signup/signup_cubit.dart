@@ -13,14 +13,14 @@ class SignupCubit extends Cubit<SignupState> {
   final AuthRepository _authRepository;
   SignupCubit(this._authRepository) : super(const SignupState.initial());
 
-  TextEditingController customerNameController = TextEditingController();
-  TextFieldValidation customerNameValidation = TextFieldValidation.normal;
+  TextEditingController userNameController = TextEditingController();
+  TextFieldValidation userNameValidation = TextFieldValidation.normal;
 
-  TextEditingController customerEmailController = TextEditingController();
-  TextFieldValidation customerEmailValidation = TextFieldValidation.normal;
+  TextEditingController userEmailController = TextEditingController();
+  TextFieldValidation userEmailValidation = TextFieldValidation.normal;
 
-  TextEditingController customerAddressController = TextEditingController();
-  TextFieldValidation customerAddressValidation = TextFieldValidation.normal;
+  TextEditingController userAddressController = TextEditingController();
+  TextFieldValidation userAddressValidation = TextFieldValidation.normal;
 
   TextEditingController newPasswordController = TextEditingController();
   TextFieldValidation newPasswordValidation = TextFieldValidation.normal;
@@ -36,6 +36,7 @@ class SignupCubit extends Cubit<SignupState> {
     TextEditingController(),
     TextEditingController(),
   ];
+  String otp = '';
 
   List<FocusNode> codeFocusNode = [
     FocusNode(),
@@ -62,62 +63,62 @@ class SignupCubit extends Cubit<SignupState> {
   }
 
   void checkUserNameValidation() {
-    if (customerNameController.text.isNotEmpty) {
-      customerNameValidation = TextFieldValidation.valid;
+    if (userNameController.text.isNotEmpty) {
+      userNameValidation = TextFieldValidation.valid;
       emit(
         SignupState.checkName(
-          name: customerNameController.text,
-          validation: customerNameValidation,
+          name: userNameController.text,
+          validation: userNameValidation,
         ),
       );
     } else {
-      customerNameValidation = TextFieldValidation.notValid;
+      userNameValidation = TextFieldValidation.notValid;
       emit(
         SignupState.checkName(
-          name: customerNameController.text,
-          validation: customerNameValidation,
+          name: userNameController.text,
+          validation: userNameValidation,
         ),
       );
     }
   }
 
   void checkAddressValidation() {
-    if (customerAddressController.text.isNotEmpty) {
-      customerAddressValidation = TextFieldValidation.valid;
+    if (userAddressController.text.isNotEmpty) {
+      userAddressValidation = TextFieldValidation.valid;
       emit(
         SignupState.checkAddress(
-          address: customerAddressController.text,
-          validation: customerAddressValidation,
+          address: userAddressController.text,
+          validation: userAddressValidation,
         ),
       );
     } else {
-      customerAddressValidation = TextFieldValidation.notValid;
+      userAddressValidation = TextFieldValidation.notValid;
       emit(
         SignupState.checkAddress(
-          address: customerAddressController.text,
-          validation: customerAddressValidation,
+          address: userAddressController.text,
+          validation: userAddressValidation,
         ),
       );
     }
   }
 
   void checkEmailValidationState() {
-    if ((customerEmailController.text.isNotEmpty ||
-            customerEmailValidation == TextFieldValidation.notValid) &&
-        AppRegex.isEmailValid(customerEmailController.text)) {
-      customerEmailValidation = TextFieldValidation.valid;
+    if ((userEmailController.text.isNotEmpty ||
+            userEmailValidation == TextFieldValidation.notValid) &&
+        AppRegex.isEmailValid(userEmailController.text)) {
+      userEmailValidation = TextFieldValidation.valid;
       emit(
         SignupState.checkEmail(
-          email: customerEmailController.text,
-          validation: customerEmailValidation,
+          email: userEmailController.text,
+          validation: userEmailValidation,
         ),
       );
     } else {
-      customerEmailValidation = TextFieldValidation.notValid;
+      userEmailValidation = TextFieldValidation.notValid;
       emit(
         SignupState.checkEmail(
-          email: customerEmailController.text,
-          validation: customerEmailValidation,
+          email: userEmailController.text,
+          validation: userEmailValidation,
         ),
       );
     }
@@ -183,17 +184,17 @@ class SignupCubit extends Cubit<SignupState> {
     checkAddressValidation();
     checkEmailValidationState();
     checkUserNameValidation();
-    if(isFieldNotEmpty(customerNameController) &&
-      isFieldNotEmpty(customerEmailController) &&
-      isFieldNotEmpty(customerAddressController) ) {
-        if(isFieldValid(customerEmailValidation) &&
-        isFieldValid(customerNameValidation) &&
-        isFieldValid(customerAddressValidation)) {
+    if(isFieldNotEmpty(userNameController) &&
+      isFieldNotEmpty(userEmailController) &&
+      isFieldNotEmpty(userAddressController) ) {
+        if(isFieldValid(userEmailValidation) &&
+        isFieldValid(userNameValidation) &&
+        isFieldValid(userAddressValidation)) {
           emit(const SignupState.signUpLoading());
           final res = await _authRepository.signup(
-            name: customerNameController.text,
-            email: customerEmailController.text,
-            address: customerAddressController.text
+            name: userNameController.text,
+            email: userEmailController.text,
+            address: userAddressController.text
           );
 
           res.fold(
@@ -215,14 +216,14 @@ class SignupCubit extends Cubit<SignupState> {
 
   void verifyOtp() async {
     emit(const SignupState.verifyOTPLoading());
-    String otp = codeControllers[0].text +
+    otp = codeControllers[0].text +
     codeControllers[1].text +
     codeControllers[2].text +
     codeControllers[3].text +
     codeControllers[4].text +
     codeControllers[5].text;
 
-    final res = await _authRepository.verifyOtp(email: customerEmailController.text, otp: otp);
+    final res = await _authRepository.verifyOtp(email: userEmailController.text, otp: otp);
     res.fold(
       (errMsg) {
         emit(SignupState.verifyOTPError(errMsg: errMsg));
@@ -231,5 +232,26 @@ class SignupCubit extends Cubit<SignupState> {
         emit(SignupState.verifyOTPSuccess(successMsg: successMsg));
       }
     );
+  }
+
+  void resetPassword() async {
+    checkNewPasswordValidation();
+    checkConfirmPasswordValidation();
+    emit(const SignupState.resetPasswordLoading());
+    if (newPasswordValidation == TextFieldValidation.valid &&
+      confirmPasswordValidation == TextFieldValidation.valid) {
+        final res = await _authRepository.resetPassword(email: userEmailController.text, otp: otp, password: newPasswordController.text);
+        res.fold(
+          (errMsg) {
+            emit(SignupState.resetPasswordError(errMsg: errMsg));
+          }, 
+          (successMsg) {
+            emit(SignupState.resetPasswordSuccess(successMsg: successMsg));
+          }
+        );
+        
+      } else {
+        emit(const SignupState.resetPasswordError(errMsg: "Please complete all fields"));
+      }
   }
 }

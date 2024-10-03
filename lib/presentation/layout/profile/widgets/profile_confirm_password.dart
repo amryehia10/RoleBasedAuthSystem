@@ -15,7 +15,7 @@ class ProfileConfirmPassword extends StatelessWidget {
         return AuthTextFieldWithHeader(
           onTap: () {},
           header: "Confirm Password",
-          isRequiredFiled: true,
+          isRequiredFiled:true,
           hintText: "Re-Enter Password",
           isPassword: true,
           isWithValidation: true,

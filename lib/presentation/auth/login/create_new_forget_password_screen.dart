@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:role_based_auth_system/blocs/login/login_cubit.dart';
 import 'package:role_based_auth_system/core/helpers/constants.dart';
-import 'package:role_based_auth_system/core/services/networking/repositories/auth_repository.dart';
+import 'package:role_based_auth_system/core/widgets/snackbar.dart';
 import 'package:role_based_auth_system/presentation/auth/login/widgets/confirm_new_forget_password.dart';
 import 'package:role_based_auth_system/presentation/auth/login/widgets/new_forget_password.dart';
 
@@ -18,7 +18,6 @@ class CreateNewForgetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var blocRead = context.read<LoginCubit>();
-    var authRead = context.read<AuthRepository>();
     blocRead.newPasswordController.text = '';
     blocRead.confirmPasswordController.text = '';
     return Scaffold(
@@ -42,8 +41,8 @@ class CreateNewForgetPassword extends StatelessWidget {
               height: 50,
             ),
             BlocBuilder<LoginCubit, LoginState>(
-              // buildWhen: (previous, current) =>
-              //     current is CheckLoginPasswordValidationState,
+              buildWhen: (previous, current) =>
+                  current is CheckNewPasswordValidationState,
               builder: (context, state) {
                 return const NewForgetPassword();
               },
@@ -57,29 +56,30 @@ class CreateNewForgetPassword extends StatelessWidget {
             ),
             const Spacer(),
             BlocConsumer<LoginCubit, LoginState>(
-              // listenWhen: (previous, current) {
-              //   return current is CheckLoginPasswordValidationState ||
-              //       current is ChangePasswordErrorState ||
-              //       current is ChangePasswordSuccessState ||
-              //       current is ChangePasswordLoadingState;
-              // },
+              buildWhen: (previous, current) => current is ResetPasswordError ||
+                                                current is ResetPasswordSuccess ||
+                                                current is ResetPasswordLoading,
+              listenWhen: (previous, current) {
+                return current is ResetPasswordError ||
+                    current is ResetPasswordSuccess;
+              },
               listener: (context, state) {
-                // if (state is ChangePasswordErrorState) {
-                //   defaultErrorSnackBar(
-                //     context: context,
-                //     message: state.errMsg,
-                //   );
-                // } else if (state is ChangePasswordSuccessState) {
-                //   Navigator.of(context).pop();
-                // }
+                if (state is ResetPasswordError) {
+                  defaultErrorSnackBar(
+                    context: context,
+                    message: state.errMsg,
+                  );
+                } else if (state is ResetPasswordSuccess) {
+                  Navigator.of(context).pushReplacementNamed(Routes.loginScreen);
+                }
               },
               builder: (context, state) {
                 return DefaultButton(
                   function: () {
-                    // blocRead.changePassword();
+                    blocRead.resetPassword();
                   },
                   text: "Change Password",
-                  // loading: state is ChangePasswordLoadingState,
+                  loading: state is ResetPasswordLoading,
                   marginRight: 16,
                   marginLeft: 16,
                   marginBottom: 30,

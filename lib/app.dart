@@ -5,22 +5,40 @@ import 'package:role_based_auth_system/core/helpers/constants.dart';
 import 'package:role_based_auth_system/core/routing/app_router.dart';
 import 'package:role_based_auth_system/core/routing/routes.dart';
 import 'package:role_based_auth_system/core/services/networking/repositories/auth_repository.dart';
+import 'package:role_based_auth_system/core/services/networking/repositories/user_repository.dart';
+import 'package:role_based_auth_system/models/user_model.dart';
 
 import 'core/theming/colors.dart';
 
 class MyApp extends StatelessWidget {
   final AppRouter appRouter;
-  const MyApp({super.key, required this.appRouter});
+  final UserModel? user;
+  const MyApp({
+    super.key,
+    required this.appRouter,
+    this.user,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return RepositoryProvider.value(
-      value: getIt<AuthRepository>(),
+    return MultiRepositoryProvider(
+      providers: [
+        RepositoryProvider.value(
+          value: getIt<AuthRepository>()
+            ..init(
+              user,
+            ),
+        ),
+        RepositoryProvider.value(
+          value: getIt<UserRepository>()
+        ),
+      ],
       child: MaterialApp(
         navigatorKey: navigatorKey,
         builder: (context, child) {
           return MediaQuery(
-            data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+            data: MediaQuery.of(context)
+                .copyWith(textScaler: const TextScaler.linear(1.0)),
             child: child!,
           );
         },
@@ -37,7 +55,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.loginScreen,
+        initialRoute: (user != null) ? Routes.layoutScreen : Routes.loginScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );

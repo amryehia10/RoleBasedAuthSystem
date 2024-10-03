@@ -27,4 +27,24 @@ class LoginState with _$LoginState {
   const factory LoginState.loginLoading() = LoginLoadingState;
   const factory LoginState.loginSuccess() = LoginSuccessState;
   const factory LoginState.loginError(final String errMsg) = LoginErrorState;
+
+  const factory LoginState.forgetPasswordLoading() = ForgetPasswordLoading;
+  const factory LoginState.forgetPasswordSuccess(final String successMsg) = ForgetPasswordSuccess;
+  const factory LoginState.forgetPasswordError(final String errMsg) = ForgetPasswordError;
+
+  const factory LoginState.verifyOTPLoading() = VerifyOTPLoadingState;
+  const factory LoginState.verifyOTPError({
+    required String errMsg,
+  }) = VerifyOTPErrorState;
+  const factory LoginState.verifyOTPSuccess({
+    required String successMsg,
+  }) = VerifyOTPSuccessState;
+
+    const factory LoginState.resetPasswordLoading() = ResetPasswordLoading;
+  const factory LoginState.resetPasswordError({
+    required String errMsg,
+  }) = ResetPasswordError;
+  const factory LoginState.resetPasswordSuccess({
+    required String successMsg,
+  }) = ResetPasswordSuccess;
 }

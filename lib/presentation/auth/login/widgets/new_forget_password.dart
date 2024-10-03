@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:role_based_auth_system/blocs/login/login_cubit.dart';
-import 'package:role_based_auth_system/blocs/signup/signup_cubit.dart';
 import 'package:role_based_auth_system/core/helpers/enums.dart';
 import 'package:role_based_auth_system/core/widgets/auth_text_field_with_header.dart';
 

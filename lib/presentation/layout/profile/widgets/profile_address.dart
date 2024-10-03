@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:role_based_auth_system/blocs/profile/profile_cubit.dart';
 import 'package:role_based_auth_system/core/helpers/enums.dart';
+import 'package:role_based_auth_system/core/services/networking/repositories/auth_repository.dart';
 import 'package:role_based_auth_system/core/theming/colors.dart';
 import 'package:role_based_auth_system/core/widgets/auth_text_field_with_header.dart';
-
-import '../../../../../core/services/networking/repositories/auth_repository.dart';
-
+import 'package:role_based_auth_system/models/user_model.dart';
 class ProfileAddress extends StatelessWidget {
   final bool isFromAddNewUser;
-  const ProfileAddress({super.key, this.isFromAddNewUser = false});
+  final UserModel? user;
+  const ProfileAddress({super.key, this.isFromAddNewUser = false, this.user});
 
   @override
    @override
@@ -24,14 +24,14 @@ class ProfileAddress extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.only(bottom: 15.0),
           child: AuthTextFieldWithHeader(
-            suffixIcon: isFromAddNewUser ? null : const Icon(Icons.edit, color: AppColors.gold,),
+            suffixIcon: isFromAddNewUser || context.read<AuthRepository>().user.role == "Viewer" ? null : const Icon(Icons.edit, color: AppColors.gold,),
             onTap: () {},
             isRequiredFiled: isFromAddNewUser ? true : false,
             header: "Address",
-            // hintText: customerAddress,
+            isEnabled: context.read<AuthRepository>().user.role != "Viewer",
             hintText: isFromAddNewUser ? blocRead.profileAddress.text.isEmpty
               ? "Enter Your Address"
-              : "Please Enter Valid Address" : "fafaf",
+              : "Please Enter Valid Address" : user!.address,
             isWithValidation: isFromAddNewUser ? true : false,
             textInputType: TextInputType.text,
             textEditingController: blocRead.profileAddress,

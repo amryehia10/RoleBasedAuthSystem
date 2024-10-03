@@ -4,6 +4,10 @@ part of 'profile_cubit.dart';
 class ProfileState with _$ProfileState {
   const factory ProfileState.initial() = _Initial;
 
+  const factory ProfileState.changeRoleIndex({
+    required int roleIndexValue,
+  }) = ChangeRoleIndexState;
+
   const factory ProfileState.checkProfileName({
     required String name,
     required TextFieldValidation validation,
@@ -27,4 +31,10 @@ class ProfileState with _$ProfileState {
     required String confirmPassword,
     required TextFieldValidation validation,
   }) = CheckProfileConfirmPasswordValidationState;
+
+  const factory ProfileState.updateUserError(final String errMsg,) = UpdateUserError;
+
+    const factory ProfileState.updateUserSuccess(final String successMsg) = UpdateUserSuccess;
+
+    const factory ProfileState.updateUserLoading() = UpdateUserLoading;
 }

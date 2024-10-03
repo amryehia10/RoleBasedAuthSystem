@@ -39,8 +39,8 @@ class DioHelper {
     try {
       dio.options.headers = {
         'Accept': 'application/json',
-        if (UserTokenService.currentUserToken.isNotEmpty)
-          "Authorization": UserTokenService.currentUserToken,
+        if (UserTokenService.currentUserToken.isNotEmpty) 
+          "Authorization": 'Bearer ${UserTokenService.currentUserToken}',
       };
       Response response = await dio.get(
         endpoint,
@@ -76,7 +76,7 @@ class DioHelper {
     dio.options.headers = {
       'Accept': 'application/json',
       if (UserTokenService.currentUserToken.isNotEmpty || token != null)
-        "Authorization": token ?? UserTokenService.currentUserToken,
+        "Authorization": token ?? 'Bearer ${UserTokenService.currentUserToken}',
       'Content-Type':
           formData != null ? "multipart/form-data" : 'application/json'
     };
@@ -108,11 +108,26 @@ class DioHelper {
   }) {
     dio.options.headers = {
       'Accept': 'application/json',
-      if (userToken != null) "Authorization": userToken,
+      if (UserTokenService.currentUserToken.isNotEmpty || userToken != null)
+        "Authorization": userToken ?? 'Bearer ${UserTokenService.currentUserToken}',
     };
     return dio.put(
       endpoint,
       data: body,
+    );
+  }
+
+  static Future<Response> deleteData({
+    required String endpoint,
+    String? userToken,
+  }) {
+    dio.options.headers = {
+      'Accept': 'application/json',
+      if (UserTokenService.currentUserToken.isNotEmpty || userToken != null)
+        "Authorization": userToken ?? 'Bearer ${UserTokenService.currentUserToken}',
+    };
+    return dio.delete(
+      endpoint,
     );
   }
 }

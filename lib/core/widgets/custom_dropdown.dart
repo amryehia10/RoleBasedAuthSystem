@@ -131,10 +131,10 @@ class CustomDropdownState<T> extends State<CustomDropdown<T>>
               ),
               width: double.infinity,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(7),
+                borderRadius: BorderRadius.circular(20),
                 border: widget.border ??
                     Border.all(
-                      color: AppColors.greyBorder,
+                      color: AppColors.grey400,
                     ),
                 boxShadow: defaultBoxShadow(),
               ),
@@ -230,11 +230,11 @@ class CustomDropdownState<T> extends State<CustomDropdown<T>>
                 padding: const EdgeInsets.only(bottom: 5),
                 clipBehavior: Clip.antiAlias,
                 decoration: BoxDecoration(
-                  color: widget.optionsContainerColor ?? AppColors.white,
+                  color: widget.optionsContainerColor ?? AppColors.grey400,
                   borderRadius: BorderRadius.circular(7),
                   boxShadow: defaultBoxShadow(),
                   border: Border.all(
-                    color: AppColors.greyBorder,
+                    color: AppColors.grey400,
                   ),
                 ),
                 child: Material(
@@ -271,7 +271,7 @@ class CustomDropdownState<T> extends State<CustomDropdown<T>>
                                         // borderRadius: BorderRadius.circular(10),
                                         color: selected == item.key &&
                                                 widget.index != -1
-                                            ? AppColors.divider
+                                            ? AppColors.grey400
                                             : null,
                                       ),
                                       padding: EdgeInsets.only(
@@ -462,7 +462,7 @@ class CustomDropdownTimeState<T> extends State<CustomDropdownTime<T>>
                   ? const EdgeInsets.only(top: 30)
                   : EdgeInsets.zero,
               decoration: BoxDecoration(
-                color: AppColors.white,
+                color: AppColors.grey400,
                 borderRadius: BorderRadius.circular(12),
               ),
             ),
@@ -497,7 +497,7 @@ class CustomDropdownTimeState<T> extends State<CustomDropdownTime<T>>
                 link: _layerLink,
                 showWhenUnlinked: false,
                 child: Material(
-                  color: AppColors.white,
+                  color: AppColors.grey400,
                   child: SizeTransition(
                     axisAlignment: 1,
                     sizeFactor: _expandAnimation,

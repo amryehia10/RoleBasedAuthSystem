@@ -110,6 +110,21 @@ class AppFonts {
           fontWeight: FontWeight.w400,
           color: AppColors.hintGrey,
         );
+  
+    static TextStyle inter15Gold400 = navigatorKey.currentContext != null &&
+          AppConstants.screenWidth(navigatorKey.currentContext!) < 600
+      ? TextStyle(
+          fontFamily: 'Inter',
+          fontSize: 15.0.sp(navigatorKey.currentContext!),
+          fontWeight: FontWeight.w400,
+          color: AppColors.gold,
+        )
+      : const TextStyle(
+          fontFamily: 'Inter',
+          fontSize: 15,
+          fontWeight: FontWeight.w400,
+          color: AppColors.gold,
+        );
 
   static TextStyle inter16Black400 = navigatorKey.currentContext != null &&
           AppConstants.screenWidth(navigatorKey.currentContext!) < 600

@@ -78,15 +78,4 @@ class AuthService {
       throw e.toString();
     }
   }
-
-   Future<Response> getUsers() async {
-    try {
-      Response response = await DioHelper.getData(
-        endpoint: 'v1/auth/forgot-password'
-      );
-      return response;
-    } catch (e) {
-      throw e.toString();
-    }
-  }
 }

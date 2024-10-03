@@ -20,18 +20,27 @@ mixin _$LayoutState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(int index) changeNavBarIndex,
+    required TResult Function() logoutSuccess,
+    required TResult Function(String msg) logoutError,
+    required TResult Function() logoutLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(int index)? changeNavBarIndex,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(String msg)? logoutError,
+    TResult? Function()? logoutLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(int index)? changeNavBarIndex,
+    TResult Function()? logoutSuccess,
+    TResult Function(String msg)? logoutError,
+    TResult Function()? logoutLoading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +48,27 @@ mixin _$LayoutState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(ChangeNavBarIndexState value) changeNavBarIndex,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(LogoutError value) logoutError,
+    required TResult Function(LogoutLoading value) logoutLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(ChangeNavBarIndexState value)? changeNavBarIndex,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(LogoutError value)? logoutError,
+    TResult? Function(LogoutLoading value)? logoutLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(ChangeNavBarIndexState value)? changeNavBarIndex,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(LogoutError value)? logoutError,
+    TResult Function(LogoutLoading value)? logoutLoading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +132,9 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(int index) changeNavBarIndex,
+    required TResult Function() logoutSuccess,
+    required TResult Function(String msg) logoutError,
+    required TResult Function() logoutLoading,
   }) {
     return initial();
   }
@@ -123,6 +144,9 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(int index)? changeNavBarIndex,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(String msg)? logoutError,
+    TResult? Function()? logoutLoading,
   }) {
     return initial?.call();
   }
@@ -132,6 +156,9 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(int index)? changeNavBarIndex,
+    TResult Function()? logoutSuccess,
+    TResult Function(String msg)? logoutError,
+    TResult Function()? logoutLoading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -145,6 +172,9 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(ChangeNavBarIndexState value) changeNavBarIndex,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(LogoutError value) logoutError,
+    required TResult Function(LogoutLoading value) logoutLoading,
   }) {
     return initial(this);
   }
@@ -154,6 +184,9 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(ChangeNavBarIndexState value)? changeNavBarIndex,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(LogoutError value)? logoutError,
+    TResult? Function(LogoutLoading value)? logoutLoading,
   }) {
     return initial?.call(this);
   }
@@ -163,6 +196,9 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(ChangeNavBarIndexState value)? changeNavBarIndex,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(LogoutError value)? logoutError,
+    TResult Function(LogoutLoading value)? logoutLoading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -245,6 +281,9 @@ class _$ChangeNavBarIndexStateImpl implements ChangeNavBarIndexState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(int index) changeNavBarIndex,
+    required TResult Function() logoutSuccess,
+    required TResult Function(String msg) logoutError,
+    required TResult Function() logoutLoading,
   }) {
     return changeNavBarIndex(index);
   }
@@ -254,6 +293,9 @@ class _$ChangeNavBarIndexStateImpl implements ChangeNavBarIndexState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(int index)? changeNavBarIndex,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(String msg)? logoutError,
+    TResult? Function()? logoutLoading,
   }) {
     return changeNavBarIndex?.call(index);
   }
@@ -263,6 +305,9 @@ class _$ChangeNavBarIndexStateImpl implements ChangeNavBarIndexState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(int index)? changeNavBarIndex,
+    TResult Function()? logoutSuccess,
+    TResult Function(String msg)? logoutError,
+    TResult Function()? logoutLoading,
     required TResult orElse(),
   }) {
     if (changeNavBarIndex != null) {
@@ -276,6 +321,9 @@ class _$ChangeNavBarIndexStateImpl implements ChangeNavBarIndexState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(ChangeNavBarIndexState value) changeNavBarIndex,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(LogoutError value) logoutError,
+    required TResult Function(LogoutLoading value) logoutLoading,
   }) {
     return changeNavBarIndex(this);
   }
@@ -285,6 +333,9 @@ class _$ChangeNavBarIndexStateImpl implements ChangeNavBarIndexState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(ChangeNavBarIndexState value)? changeNavBarIndex,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(LogoutError value)? logoutError,
+    TResult? Function(LogoutLoading value)? logoutLoading,
   }) {
     return changeNavBarIndex?.call(this);
   }
@@ -294,6 +345,9 @@ class _$ChangeNavBarIndexStateImpl implements ChangeNavBarIndexState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(ChangeNavBarIndexState value)? changeNavBarIndex,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(LogoutError value)? logoutError,
+    TResult Function(LogoutLoading value)? logoutLoading,
     required TResult orElse(),
   }) {
     if (changeNavBarIndex != null) {
@@ -311,4 +365,395 @@ abstract class ChangeNavBarIndexState implements LayoutState {
   @JsonKey(ignore: true)
   _$$ChangeNavBarIndexStateImplCopyWith<_$ChangeNavBarIndexStateImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LogoutSuccessImplCopyWith<$Res> {
+  factory _$$LogoutSuccessImplCopyWith(
+          _$LogoutSuccessImpl value, $Res Function(_$LogoutSuccessImpl) then) =
+      __$$LogoutSuccessImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LogoutSuccessImplCopyWithImpl<$Res>
+    extends _$LayoutStateCopyWithImpl<$Res, _$LogoutSuccessImpl>
+    implements _$$LogoutSuccessImplCopyWith<$Res> {
+  __$$LogoutSuccessImplCopyWithImpl(
+      _$LogoutSuccessImpl _value, $Res Function(_$LogoutSuccessImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LogoutSuccessImpl implements LogoutSuccess {
+  const _$LogoutSuccessImpl();
+
+  @override
+  String toString() {
+    return 'LayoutState.logoutSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LogoutSuccessImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int index) changeNavBarIndex,
+    required TResult Function() logoutSuccess,
+    required TResult Function(String msg) logoutError,
+    required TResult Function() logoutLoading,
+  }) {
+    return logoutSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int index)? changeNavBarIndex,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(String msg)? logoutError,
+    TResult? Function()? logoutLoading,
+  }) {
+    return logoutSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int index)? changeNavBarIndex,
+    TResult Function()? logoutSuccess,
+    TResult Function(String msg)? logoutError,
+    TResult Function()? logoutLoading,
+    required TResult orElse(),
+  }) {
+    if (logoutSuccess != null) {
+      return logoutSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(ChangeNavBarIndexState value) changeNavBarIndex,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(LogoutError value) logoutError,
+    required TResult Function(LogoutLoading value) logoutLoading,
+  }) {
+    return logoutSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(ChangeNavBarIndexState value)? changeNavBarIndex,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(LogoutError value)? logoutError,
+    TResult? Function(LogoutLoading value)? logoutLoading,
+  }) {
+    return logoutSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(ChangeNavBarIndexState value)? changeNavBarIndex,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(LogoutError value)? logoutError,
+    TResult Function(LogoutLoading value)? logoutLoading,
+    required TResult orElse(),
+  }) {
+    if (logoutSuccess != null) {
+      return logoutSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogoutSuccess implements LayoutState {
+  const factory LogoutSuccess() = _$LogoutSuccessImpl;
+}
+
+/// @nodoc
+abstract class _$$LogoutErrorImplCopyWith<$Res> {
+  factory _$$LogoutErrorImplCopyWith(
+          _$LogoutErrorImpl value, $Res Function(_$LogoutErrorImpl) then) =
+      __$$LogoutErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String msg});
+}
+
+/// @nodoc
+class __$$LogoutErrorImplCopyWithImpl<$Res>
+    extends _$LayoutStateCopyWithImpl<$Res, _$LogoutErrorImpl>
+    implements _$$LogoutErrorImplCopyWith<$Res> {
+  __$$LogoutErrorImplCopyWithImpl(
+      _$LogoutErrorImpl _value, $Res Function(_$LogoutErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? msg = null,
+  }) {
+    return _then(_$LogoutErrorImpl(
+      null == msg
+          ? _value.msg
+          : msg // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LogoutErrorImpl implements LogoutError {
+  const _$LogoutErrorImpl(this.msg);
+
+  @override
+  final String msg;
+
+  @override
+  String toString() {
+    return 'LayoutState.logoutError(msg: $msg)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LogoutErrorImpl &&
+            (identical(other.msg, msg) || other.msg == msg));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, msg);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LogoutErrorImplCopyWith<_$LogoutErrorImpl> get copyWith =>
+      __$$LogoutErrorImplCopyWithImpl<_$LogoutErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int index) changeNavBarIndex,
+    required TResult Function() logoutSuccess,
+    required TResult Function(String msg) logoutError,
+    required TResult Function() logoutLoading,
+  }) {
+    return logoutError(msg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int index)? changeNavBarIndex,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(String msg)? logoutError,
+    TResult? Function()? logoutLoading,
+  }) {
+    return logoutError?.call(msg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int index)? changeNavBarIndex,
+    TResult Function()? logoutSuccess,
+    TResult Function(String msg)? logoutError,
+    TResult Function()? logoutLoading,
+    required TResult orElse(),
+  }) {
+    if (logoutError != null) {
+      return logoutError(msg);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(ChangeNavBarIndexState value) changeNavBarIndex,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(LogoutError value) logoutError,
+    required TResult Function(LogoutLoading value) logoutLoading,
+  }) {
+    return logoutError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(ChangeNavBarIndexState value)? changeNavBarIndex,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(LogoutError value)? logoutError,
+    TResult? Function(LogoutLoading value)? logoutLoading,
+  }) {
+    return logoutError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(ChangeNavBarIndexState value)? changeNavBarIndex,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(LogoutError value)? logoutError,
+    TResult Function(LogoutLoading value)? logoutLoading,
+    required TResult orElse(),
+  }) {
+    if (logoutError != null) {
+      return logoutError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogoutError implements LayoutState {
+  const factory LogoutError(final String msg) = _$LogoutErrorImpl;
+
+  String get msg;
+  @JsonKey(ignore: true)
+  _$$LogoutErrorImplCopyWith<_$LogoutErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LogoutLoadingImplCopyWith<$Res> {
+  factory _$$LogoutLoadingImplCopyWith(
+          _$LogoutLoadingImpl value, $Res Function(_$LogoutLoadingImpl) then) =
+      __$$LogoutLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LogoutLoadingImplCopyWithImpl<$Res>
+    extends _$LayoutStateCopyWithImpl<$Res, _$LogoutLoadingImpl>
+    implements _$$LogoutLoadingImplCopyWith<$Res> {
+  __$$LogoutLoadingImplCopyWithImpl(
+      _$LogoutLoadingImpl _value, $Res Function(_$LogoutLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LogoutLoadingImpl implements LogoutLoading {
+  const _$LogoutLoadingImpl();
+
+  @override
+  String toString() {
+    return 'LayoutState.logoutLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LogoutLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int index) changeNavBarIndex,
+    required TResult Function() logoutSuccess,
+    required TResult Function(String msg) logoutError,
+    required TResult Function() logoutLoading,
+  }) {
+    return logoutLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int index)? changeNavBarIndex,
+    TResult? Function()? logoutSuccess,
+    TResult? Function(String msg)? logoutError,
+    TResult? Function()? logoutLoading,
+  }) {
+    return logoutLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int index)? changeNavBarIndex,
+    TResult Function()? logoutSuccess,
+    TResult Function(String msg)? logoutError,
+    TResult Function()? logoutLoading,
+    required TResult orElse(),
+  }) {
+    if (logoutLoading != null) {
+      return logoutLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(ChangeNavBarIndexState value) changeNavBarIndex,
+    required TResult Function(LogoutSuccess value) logoutSuccess,
+    required TResult Function(LogoutError value) logoutError,
+    required TResult Function(LogoutLoading value) logoutLoading,
+  }) {
+    return logoutLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(ChangeNavBarIndexState value)? changeNavBarIndex,
+    TResult? Function(LogoutSuccess value)? logoutSuccess,
+    TResult? Function(LogoutError value)? logoutError,
+    TResult? Function(LogoutLoading value)? logoutLoading,
+  }) {
+    return logoutLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(ChangeNavBarIndexState value)? changeNavBarIndex,
+    TResult Function(LogoutSuccess value)? logoutSuccess,
+    TResult Function(LogoutError value)? logoutError,
+    TResult Function(LogoutLoading value)? logoutLoading,
+    required TResult orElse(),
+  }) {
+    if (logoutLoading != null) {
+      return logoutLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogoutLoading implements LayoutState {
+  const factory LogoutLoading() = _$LogoutLoadingImpl;
 }

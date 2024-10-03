@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:role_based_auth_system/blocs/home/home_cubit.dart';
+import 'package:role_based_auth_system/core/routing/routes.dart';
+import 'package:role_based_auth_system/core/widgets/default_dialog.dart';
+import 'package:role_based_auth_system/core/widgets/snackbar.dart';
 import 'package:role_based_auth_system/models/user_model.dart';
 import 'package:role_based_auth_system/presentation/layout/home/widgets/user_card_image.dart';
-import 'package:role_based_auth_system/presentation/layout/home/widgets/user_roles_dropdown.dart';
-
 import '../../../../core/helpers/constants.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/fonts.dart';
@@ -20,12 +23,13 @@ class UserCard extends StatelessWidget {
     return InkWell(
       highlightColor: Colors.transparent,
       onTap: () {
-        // context.pushNamed(
-        //   Routes.carDetailsScreen,
-        //   arguments: CardDetailsScreenArguments(
-        //     car: car,
-        //   ),
-        // );
+        Navigator.of(context).pushNamed(
+          Routes.editProfileScreen,
+          arguments:{
+            'isFromHome': true,
+            'user': user,
+          },
+        );
       },
       child: Container(
         width: AppConstants.screenWidth(context) * 0.42,
@@ -45,18 +49,57 @@ class UserCard extends StatelessWidget {
               children: [
                 _userImage(),
                 Align(
-                  alignment: Alignment.topRight,
-                  child: IconButton(onPressed: (){}, icon: const Icon(Icons.delete, color: AppColors.errorRed,))
-                )
+                    alignment: Alignment.topRight,
+                    child: IconButton(
+                        onPressed: () {
+                          showAdaptiveDialog(
+                              context: context,
+                              builder: (dialogContext) => BlocProvider.value(
+                                value: context.read<HomeCubit>(),
+                                child: BlocConsumer<HomeCubit, HomeCubitState>(
+                                  listenWhen: (previous, current) {
+                                    return current is DeleteUsersError ||
+                                        current is DeleteUsersSuccesss;
+                                  },
+                                  listener: (context, state) {
+                                    if (state is DeleteUsersError) {
+                                      defaultErrorSnackBar(
+                                          context: context,
+                                          message: state.msg);
+                                    } else if (state is DeleteUsersSuccesss) {
+                                      if (Navigator.of(dialogContext)
+                                          .canPop()) {
+                                        Navigator.of(dialogContext).pop();
+                                      }
+                                      defaultSuccessSnackBar(context: context, message:  state.msg);
+                                    }
+                                  },
+                                  builder: (context, state) {
+                                    return DefaultDialog(
+                                      secondButtonColor: AppColors.errorRed,
+                                      onSecondButtonTapped: () {
+                                        context.read<HomeCubit>().deleteUsers(user.id);
+                                      },
+                                      loading: state is DeleteUsersLoading,
+                                      secondButtonText: "Yes",
+                                      title: "Delete",
+                                      subTitle:
+                                          "Are you sure you want to delete this user?",
+                                    );
+                                  },
+                                ),
+                              ),
+                            );
+                        },
+                        icon: const Icon(
+                          Icons.delete,
+                          color: AppColors.errorRed,
+                        )))
               ],
             ),
             Padding(
               padding: const EdgeInsets.only(
-                right: 16.0,
-                left: 16,
-                top: 8,
-                bottom: 10
-              ),
+                  right: 16.0, left: 16, top: 8, bottom: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -77,13 +120,16 @@ class UserCard extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  UserRolesDropdown(
-                    role: user.role,
-                    id: user.id,
-                    onRoleChanged: (int newIndex) {
-                      user.role = newIndex;
-                    }
+                  RichText(
+                    text: TextSpan(
+                      text: 'Current Role: ',
+                      style: AppFonts.inter15Black400,
+                      children: <TextSpan>[
+                        TextSpan(text: user.role, style: AppFonts.inter15Gold400),
+                      ],
+                    ),
                   )
+                  
                 ],
               ),
             ),
@@ -96,8 +142,8 @@ class UserCard extends StatelessWidget {
   Hero _userImage() {
     return Hero(
       tag: user.id,
-      child: UserCardImage(
-        userImagePath: user.profileImageUrl,
+      child: const UserCardImage(
+        userImagePath: 'assets/images/profileImage.png',
       ),
     );
   }

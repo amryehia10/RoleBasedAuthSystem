@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:role_based_auth_system/blocs/home/home_cubit.dart';
+import 'package:role_based_auth_system/blocs/profile/profile_cubit.dart';
 import 'package:role_based_auth_system/core/theming/fonts.dart';
-
 import '../../../../core/theming/colors.dart';
 import '../../../../core/widgets/custom_dropdown.dart';
 import '../../../../core/widgets/widget_with_header.dart';
 
 class UserRolesDropdown extends StatelessWidget {
-  final int role;
-  final String id;
-  final ValueChanged<int> onRoleChanged;
   const UserRolesDropdown({
     super.key, 
-    required this.id,
-    required this.role, 
-    required this.onRoleChanged,
   });
 
   @override
@@ -23,11 +16,11 @@ class UserRolesDropdown extends StatelessWidget {
     final GlobalKey<CustomDropdownState> dropdownKey = GlobalKey<CustomDropdownState>();
     return RepaintBoundary(
       key: const Key("UserRoles"),
-      child: BlocBuilder<HomeCubit, HomeCubitState>(
+      child: BlocBuilder<ProfileCubit, ProfileState>(
         buildWhen: (previous, current) => current is ChangeRoleIndexState,
         builder: (context, state) {
-          var blocRead = context.read<HomeCubit>();
-          var blocWatch = context.watch<HomeCubit>();
+          var blocRead = context.read<ProfileCubit>();
+          var blocWatch = context.watch<ProfileCubit>();
           return WidgetWithHeader(
             key: const Key("UserRoles"),
             header: "Current Role:",
@@ -41,22 +34,22 @@ class UserRolesDropdown extends StatelessWidget {
               paddingLeft: 0,
               key: dropdownKey,
               paddingRight: 0,
-              index: blocWatch.getRoleIndex(id),
+              index: blocWatch.roleIndex,
               showText: false,
               listOfValues: const [
                 "Admin",
                 "User",
+                "Viewer"
               ],
               text: "Select Role",
               isCheckedBox: false,
-              optionsContainerWidth: 110,
               onChange: (_, int index) {
-                onRoleChanged(index);
-                blocRead.changeRoleIndexValue(index, id);
+                blocRead.changeRoleIndexValue(index);
               },
               items: [
                 "Admin",
                 "User",
+                "Viewer"
               ]
                   .map((element) => element)
                   .toList()

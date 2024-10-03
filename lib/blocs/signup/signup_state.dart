@@ -43,4 +43,12 @@ class SignupState with _$SignupState {
   const factory SignupState.verifyOTPSuccess({
     required String successMsg,
   }) = VerifyOTPSuccessState;
+
+    const factory SignupState.resetPasswordLoading() = ResetPasswordLoading;
+  const factory SignupState.resetPasswordError({
+    required String errMsg,
+  }) = ResetPasswordError;
+  const factory SignupState.resetPasswordSuccess({
+    required String successMsg,
+  }) = ResetPasswordSuccess;
 }

@@ -3,11 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:role_based_auth_system/blocs/home/home_cubit.dart';
 import 'package:role_based_auth_system/core/di/dependency_injection.dart';
 import 'package:role_based_auth_system/core/helpers/constants.dart';
+import 'package:role_based_auth_system/core/services/networking/repositories/auth_repository.dart';
 import 'package:role_based_auth_system/core/theming/colors.dart';
 import 'package:role_based_auth_system/core/theming/fonts.dart';
-import 'package:role_based_auth_system/presentation/auth/login/login_screen.dart';
+import 'package:role_based_auth_system/core/widgets/default_dialog.dart';
+import 'package:role_based_auth_system/core/widgets/snackbar.dart';
 import 'package:role_based_auth_system/presentation/layout/profile/add_new_user_screen.dart';
-
 import '../../blocs/layout/layout_cubit.dart';
 import '../../blocs/profile/profile_cubit.dart';
 import '../../core/routing/routes.dart';
@@ -26,7 +27,7 @@ class LayoutScreen extends StatelessWidget {
       ),
       BlocProvider<ProfileCubit>(
         create: (context) => getIt<ProfileCubit>(),
-        child: const EditProfileScreen(),
+        child: EditProfileScreen(user: context.watch<AuthRepository>().user,),
       ),
       BlocProvider<ProfileCubit>(
         create: (context) => getIt<ProfileCubit>(),
@@ -90,21 +91,21 @@ class DrawerBar extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.blue,
+          DrawerHeader(
+            decoration: const BoxDecoration(
+              color: AppColors.primaryBlue,
             ),
-            child: Text('Drawer Header'),
+            child: Text('Auth System', style: AppFonts.inter18White500,),
           ),
-          ListTile(
+          context.read<AuthRepository>().user.role == "Admin" ? ListTile(
             title: const Text('Home'),
             selected: context.watch<LayoutCubit>().navBarIndex == 0,
             onTap: () {
               context.read<LayoutCubit>().changeNavBarIndex(0);
               // Navigator.pop(context);
             },
-          ),
-          ListTile(
+          ): const SizedBox(),
+           ListTile(
             title: const Text('Edit Profile'),
             selected: context.watch<LayoutCubit>().navBarIndex == 1,
             onTap: () {
@@ -112,21 +113,54 @@ class DrawerBar extends StatelessWidget {
               // Navigator.pop(context);
             },
           ),
-          ListTile(
+           context.read<AuthRepository>().user.role == "Admin" ? ListTile(
             title: const Text('Add New User'),
             selected: context.watch<LayoutCubit>().navBarIndex == 2,
             onTap: () {
               context.read<LayoutCubit>().changeNavBarIndex(2);
               // Navigator.pop(context);
             },
-          ),
-          //todo
+          ) : const SizedBox(),
           ListTile(
             title: const Text('Logout'),
             selected: false,
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.of(context).pushReplacementNamed(Routes.loginScreen);
+            onTap: () async {
+              showAdaptiveDialog(
+                context: context, 
+                builder: (dialogContext) => BlocProvider.value(
+                  value: context.read<LayoutCubit>(),
+                  child: BlocConsumer<LayoutCubit, LayoutState>(
+                    listenWhen: (previous, current) {
+                      return current is LogoutError ||
+                          current is LogoutSuccess;
+                    },
+                    listener: (context, state) {
+                      if (state is LogoutError) {
+                        defaultErrorSnackBar(
+                            context: context,
+                            message: state.msg);
+                      } else if (state is LogoutSuccess) {
+                        if (Navigator.of(dialogContext).canPop()) {
+                          Navigator.of(context).pushReplacementNamed(Routes.loginScreen);
+                        }
+                      }
+                    },
+                    builder: (context, state) {
+                      return DefaultDialog(
+                        secondButtonColor: AppColors.errorRed,
+                        onSecondButtonTapped: () {
+                          context.read<LayoutCubit>().logout();
+                        },
+                        loading: state is LogoutLoading,
+                        secondButtonText: "Yes, Logout",
+                        title: "Already Leaving?",
+                        subTitle:
+                            "Are you sure you want to logout?",
+                      );
+                    },
+                  )
+                )
+              );
             },
           ),
         ],

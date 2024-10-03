@@ -19,21 +19,21 @@ class SignupAddressField extends StatelessWidget {
 
         return AuthTextFieldWithHeader(
           header: "Address",
-          hintText: blocRead.customerAddressController.text.isEmpty
+          hintText: blocRead.userAddressController.text.isEmpty
               ? "Enter Your Address"
               : "Please Enter Valid Address",
           isRequiredFiled: true,
           isWithValidation: true,
           textInputType: TextInputType.text,
           validationText: "Please Enter Valid Address.",
-          textEditingController: blocRead.customerAddressController,
-          validation: context.watch<SignupCubit>().customerAddressValidation,
+          textEditingController: blocRead.userAddressController,
+          validation: context.watch<SignupCubit>().userAddressValidation,
           onTapOutside: () {
             blocRead.checkAddressValidation();
           },
           onChange: (value) {
             if (value.isEmpty ||
-                blocRead.customerAddressValidation !=
+                blocRead.userAddressValidation !=
                     TextFieldValidation.normal) {
               blocRead.checkAddressValidation();
             }

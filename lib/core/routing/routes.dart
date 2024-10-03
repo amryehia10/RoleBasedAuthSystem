@@ -8,5 +8,6 @@ class Routes {
   static const String createNewPasswordScreen = '/createNewPasswordScreen';
   static const String otpForgetScreen = '/otpForgetScreen';
   static const String createNewForgetPasswordScreen = '/createNewForgetPasswordScreen';
+  static const String editProfileScreen = '/editProfileScreen';
   
 }

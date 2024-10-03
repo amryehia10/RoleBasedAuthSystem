@@ -23,17 +23,17 @@ class SignupEmailField extends StatelessWidget {
           hintText: "Enter Your Email",
           isWithValidation: true,
           textInputType: TextInputType.emailAddress,
-          validationText: blocRead.customerEmailController.text.isEmpty
+          validationText: blocRead.userEmailController.text.isEmpty
               ? "Please Enter Email"
               : "Please Enter Valid Email.",
-          textEditingController: blocRead.customerEmailController,
-          validation: context.watch<SignupCubit>().customerEmailValidation,
+          textEditingController: blocRead.userEmailController,
+          validation: context.watch<SignupCubit>().userEmailValidation,
           onTapOutside: () {
             blocRead.checkEmailValidationState();
           },
           onChange: (value) {
             if (value.isEmpty ||
-                blocRead.customerEmailValidation !=
+                blocRead.userEmailValidation !=
                     TextFieldValidation.normal) {
               blocRead.checkEmailValidationState();
             }

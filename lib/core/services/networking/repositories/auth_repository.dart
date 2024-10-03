@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:either_dart/either.dart';
+import 'package:role_based_auth_system/core/services/local/storage_service.dart';
+import 'package:role_based_auth_system/core/services/local/token_service.dart';
 import 'package:role_based_auth_system/core/services/networking/api_services/auth_service.dart';
 import 'package:role_based_auth_system/models/user_model.dart';
 
@@ -8,6 +12,32 @@ class AuthRepository {
   AuthRepository(
     this._authService,
   );
+
+  UserModel user = UserModel.empty();
+
+  void init(
+    UserModel? cachedUser,
+  ) {
+    if (cachedUser != null) {
+      user = cachedUser;
+    }
+  }
+
+
+  void setUserData(UserModel? cachedUser) {
+    if (cachedUser != null) {
+      user = cachedUser;
+      UserTokenService.saveUserToken(user.token);
+      UserTokenService.userTokenFirstTime();
+    }
+  }
+
+  Future<void> clearCustomerData() async {
+    user = UserModel.empty();
+    UserTokenService.deleteUserToken();
+    StorageService.deleteAllData();
+  }
+
 
   Future<Either<String, String>> signup({
     required String name,
@@ -49,78 +79,67 @@ class AuthRepository {
     }
   }
 
-   List<UserModel> users = [
-      UserModel(
-        id: '1',
-        role: 0, //admin
-        name: 'John Doe',
-        email: 'john.doe@example.com',
-        phoneNumber: '+1234567890',
-        profileImageUrl: 'assets/images/profileImage.png',
-      ),
-      UserModel(
-        id: '2',
-        role: 1,  //user
-        name: 'Jane Smith',
-        email: 'jane.smith@example.com',
-        phoneNumber: '+0987654321',
-        profileImageUrl: 'assets/images/profileImage.png',
-      ),
-      UserModel(
-        id: '3',
-        role: 1,
-        name: 'Robert Johnson',
-        email: 'robert.johnson@example.com',
-        phoneNumber: '+1122334455',
-        profileImageUrl: 'assets/images/profileImage.png',
-      ),
-      UserModel(
-        id: '4',
-        role: 0,
-        name: 'Emily Davis',
-        email: 'emily.davis@example.com',
-        phoneNumber: '+1223344556',
-        profileImageUrl: 'assets/images/profileImage.png',
-      ),
-      UserModel(
-        id: '5',
-        role: 0,
-        name: 'Emily Davis',
-        email: 'emily.davis@example.com',
-        phoneNumber: '+1223344556',
-        profileImageUrl: 'assets/images/profileImage.png',
-      ),
-      UserModel(
-        id: '6',
-        role: 0,
-        name: 'Emily Davis',
-        email: 'emily.davis@example.com',
-        phoneNumber: '+1223344556',
-        profileImageUrl: 'assets/images/profileImage.png',
-      ),
-      UserModel(
-        id: '7',
-        role: 0,
-        name: 'Emily Davis',
-        email: 'emily.davis@example.com',
-        phoneNumber: '+1223344556',
-        profileImageUrl: 'assets/images/profileImage.png',
-      ),
-      UserModel(
-        id: '8',
-        role: 0,
-        name: 'Emily Davis',
-        email: 'emily.davis@example.com',
-        phoneNumber: '+1223344556',
-        profileImageUrl: 'assets/images/profileImage.png',
-      ),
-      UserModel(
-        id: '9',
-        role: 0,
-        name: 'Emily Davis',
-        email: 'emily.davis@example.com',
-        phoneNumber: '+1223344556',
-        profileImageUrl: 'assets/images/profileImage.png',
-      ),
-    ];
+  Future<Either<String, String>> resetPassword({
+    required String email,
+    required String otp,
+    required String password
+  }) async {
+    try {
+      final response = await _authService.resetPassword(
+        email: email,
+        otp: otp,
+        password: password
+      );
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        return Right(response.data['message']);
+      } else {
+         return Left(response.data['message']);
+      }
+    } catch (e) {
+      return Left(e.toString());
+    }
+  }
+
+  
+  Future<Either<String, String>> forgetPassword({
+    required String email,
+  }) async {
+    try {
+      final response = await _authService.forgetPassword(
+        email: email,
+      );
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        return Right(response.data['message']);
+      } else {
+         return Left(response.data['message']);
+      }
+    } catch (e) {
+      return Left(e.toString());
+    }
+  }
+
+  Future<Either<String, UserModel>> login({
+    required String email,
+    required String password,
+  }) async {
+      try {
+      final response = await _authService.login(
+        email: email,
+        password: password,
+      );
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        UserModel user = UserModel.fromJson(response.data);
+        UserTokenService.saveUserToken(user.token);
+        StorageService.saveData(
+          "userData",
+          json.encode(user.toJson()),
+        );
+        return Right(user);
+      } else {
+        return Left(response.data['message']);
+      }
+    } catch (e) {
+      return Left(e.toString());
+    }
+  }
 }

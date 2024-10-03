@@ -23,17 +23,17 @@ class SignupNameField extends StatelessWidget {
           hintText: "Enter Your Name",
           isWithValidation: true,
           textInputType: TextInputType.name,
-          validationText: blocRead.customerNameController.text.isEmpty
+          validationText: blocRead.userNameController.text.isEmpty
               ? "Please Enter Name"
               : "Please Enter Valid Name.",
-          textEditingController: blocRead.customerNameController,
-          validation: context.watch<SignupCubit>().customerNameValidation,
+          textEditingController: blocRead.userNameController,
+          validation: context.watch<SignupCubit>().userNameValidation,
           onTapOutside: () {
             blocRead.checkUserNameValidation();
           },
           onChange: (value) {
             if (value.isEmpty ||
-                blocRead.customerNameValidation != TextFieldValidation.normal) {
+                blocRead.userNameValidation != TextFieldValidation.normal) {
               blocRead.checkUserNameValidation();
             }
           },

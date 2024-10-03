@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:role_based_auth_system/blocs/login/login_cubit.dart';
-import 'package:role_based_auth_system/blocs/signup/signup_cubit.dart';
 import 'package:role_based_auth_system/core/helpers/constants.dart';
 import 'package:role_based_auth_system/core/routing/routes.dart';
 import 'package:role_based_auth_system/core/theming/fonts.dart';
 import 'package:role_based_auth_system/core/widgets/custom_header.dart';
 import 'package:role_based_auth_system/core/widgets/default_buttons.dart';
+import 'package:role_based_auth_system/core/widgets/snackbar.dart';
 import 'package:role_based_auth_system/presentation/auth/login/widgets/login_email.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
@@ -48,27 +48,25 @@ class ForgetPasswordScreen extends StatelessWidget {
             ),
             const Spacer(),
             BlocConsumer<LoginCubit, LoginState>(
+              listenWhen: (previous, current) => current is ForgetPasswordError ||
+                                                 current is ForgetPasswordSuccess,
               listener: (context, state) {
-                // if(state is ForgetPasswordErrorState) {
-                //    defaultErrorSnackBar(
-                //       context: context,
-                //       message: state.errMsg,
-                //     );
-                // } else if(state is ForgetPasswordSuccessState) {
-                //     Navigator.of(context).pushReplacementNamed(
-                //     Routes.otpForgetPasswordScreen,
-                //     arguments: context.read<LoginCubit>());
-                // }
+                if(state is ForgetPasswordError) {
+                   defaultErrorSnackBar(
+                      context: context,
+                      message: state.errMsg,
+                    );
+                } else if(state is ForgetPasswordSuccess) {
+                  Navigator.of(context).pushNamed(Routes.otpForgetScreen, arguments: context.read<LoginCubit>());
+                }
               },
               builder: (context, state) {
                 var blocRead = context.read<LoginCubit>();
                 return DefaultButton(
                   function: () {
-                    Navigator.of(context).pushNamed(Routes.otpForgetScreen, arguments: context.read<LoginCubit>());
-
-                    // blocRead.forgetPassword();
+                    blocRead.forgetPassword();
                   },
-                  // loading: state is ForgetPasswordLoadingState,
+                  loading: state is ForgetPasswordLoading,
                   text: "Continue",
                   marginRight: 16,
                   marginLeft: 16,
