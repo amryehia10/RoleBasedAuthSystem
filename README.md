@@ -1,16 +1,19 @@
-# role_based_auth_system
+# Role-Based Authentication System
 
-A new Flutter project.
+## A Flutter project that implements role-based authentication with JWT, including Admin, User, and Viewer roles. This system provides secure access control and dynamically adjusts UI elements based on user roles.
 
-## Getting Started
+### Features
 
-This project is a starting point for a Flutter application.
+### - JWT Authentication: Secure authentication using JSON Web Tokens.
+### - Role-Based Access Control: Three roles—Admin, User, and Viewer—each with specific permissions.
+### - Dynamic UI: Different UI elements displayed based on user roles.
+### - Password Management: Password reset functionality with email integration.
+### - State Management: Implemented using flutter_bloc for clean architecture
 
-A few resources to get you started if this is your first Flutter project:
+### Tech Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### - Flutter: Frontend framework for building cross-platform mobile apps.
+### - Dio: HTTP client for making API requests.
+### - Shared Preferences & Secure Storage: Local storage for session management.
+### - Freezed: For code generation and immutability.
+### - Flutter Bloc: State management using Cubits for predictable state flows.
